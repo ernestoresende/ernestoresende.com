@@ -1,0 +1,16 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  flex-flow: column;
+  min-height: 100vh;
+}
+
+.header__wrapper {
+  flex: 0 1 auto;
+}
+.content__wrapper {
+  flex: 1 1 auto;
+}
+.footer__wrapper {
+  flex: 0 1 40px;
+}
