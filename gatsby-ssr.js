@@ -1,5 +1,5 @@
 import React from 'react'
-import Terser from 'terser'
+import { minify } from 'terser'
 
 import {
   COLOR_MODE_KEY,
@@ -10,9 +10,9 @@ import {
 import App from './src/components/App'
 
 function setColorsByTheme() {
-  const colors = '🌈'
-  const colorModeKey = '🔑'
-  const colorModeCssProp = '⚡️'
+  const colors = 'setColor'
+  const colorModeKey = 'setColorModeKey'
+  const colorModeCssProp = 'setColorMode'
 
   const mql = window.matchMedia('(prefers-color-scheme: dark)')
   const prefersDarkFromMQ = mql.matches
@@ -47,27 +47,13 @@ const MagicScriptTag = () => {
 
   let calledFunction = `(${boundFn})()`
 
-  calledFunction = Terser.minify(calledFunction).code
+  calledFunction = minify(calledFunction).code
 
   // eslint-disable-next-line react/no-danger
   return <script dangerouslySetInnerHTML={{ __html: calledFunction }} />
 }
 
-/**
- * If the user has JS disabled, the injected script will never fire!
- * This means that they won't have any colors set, everything will be default
- * black and white.
- * We can solve for this by injecting a `<style>` tag into the head of the
- * document, which sets default values for all of our colors.
- * Only light mode will be available for users with JS disabled.
- */
 const FallbackStyles = () => {
-  // Create a string holding each CSS variable:
-  /*
-    `--color-text: black;
-    --color-background: white;`
-  */
-
   const cssVariableString = Object.entries(COLORS).reduce(
     (acc, [name, colorByTheme]) => {
       return `${acc}\n--color-${name}: ${colorByTheme.light};`
