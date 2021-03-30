@@ -1,11 +1,7 @@
 import React from 'react'
 import { minify } from 'terser'
 
-import {
-  COLOR_MODE_KEY,
-  COLORS,
-  INITIAL_COLOR_MODE_CSS_PROP,
-} from './src/constants'
+import { COLOR_MODE_KEY, COLORS, INITIAL_COLOR_MODE_CSS_PROP } from './src/constants'
 
 import App from './src/components/App'
 
@@ -54,12 +50,9 @@ const MagicScriptTag = () => {
 }
 
 const FallbackStyles = () => {
-  const cssVariableString = Object.entries(COLORS).reduce(
-    (acc, [name, colorByTheme]) => {
-      return `${acc}\n--color-${name}: ${colorByTheme.light};`
-    },
-    ''
-  )
+  const cssVariableString = Object.entries(COLORS).reduce((acc, [name, colorByTheme]) => {
+    return `${acc}\n--color-${name}: ${colorByTheme.light};`
+  }, '')
 
   const wrappedInSelector = `html { ${cssVariableString} }`
 

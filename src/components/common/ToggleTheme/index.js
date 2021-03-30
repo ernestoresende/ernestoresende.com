@@ -9,8 +9,8 @@ const ToggleTheme = () => {
   if (!colorMode) {
     return null
   }
-  
-  return(
+
+  return (
     <input
       type='checkbox'
       checked={colorMode === 'dark'}
