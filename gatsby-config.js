@@ -17,7 +17,7 @@ module.exports = {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'posts',
-        path: `${__dirname}/src/content/posts/`
+        path: `${__dirname}/src/content/posts/`,
       },
     },
     {
@@ -38,12 +38,6 @@ module.exports = {
           'gatsby-remark-lazy-load',
           'gatsby-remark-external-links',
         ],
-      },
-    },
-    {
-      resolve: 'gatsby-plugin-sass',
-      options: {
-        implementation: require('sass')
       },
     },
     'gatsby-image',
