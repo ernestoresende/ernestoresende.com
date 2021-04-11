@@ -1,7 +1,7 @@
 import React from 'react'
 import { minify } from 'terser'
 
-import { COLOR_MODE_KEY, COLORS, INITIAL_COLOR_MODE_CSS_PROP } from './src/constants'
+import { COLOR_MODE_KEY, COLORS, INITIAL_COLOR_MODE_CSS_PROP } from './src/styles/variables'
 
 import App from './src/components/App'
 

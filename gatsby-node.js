@@ -21,7 +21,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
           }
         }
       }
-      tagsGroup: allMdx (limit: 1000) {
+      tagsGroup: allMdx(limit: 1000) {
         group(field: frontmatter___tags) {
           fieldValue
         }

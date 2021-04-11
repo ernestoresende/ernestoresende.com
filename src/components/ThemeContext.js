@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { COLORS, COLOR_MODE_KEY, INITIAL_COLOR_MODE_CSS_PROP } from '../constants'
+import { COLORS, COLOR_MODE_KEY, INITIAL_COLOR_MODE_CSS_PROP } from '../styles/variables'
 
 export const ThemeContext = React.createContext()
 
@@ -9,10 +9,7 @@ export const ThemeProvider = ({ children }) => {
 
   React.useEffect(() => {
     const root = window.document.documentElement
-
-    // Because colors matter so much for the initial page view, we're
-    // doing a lot of the work in gatsby-ssr. That way it can happen before
-    // the React component tree mounts.
+    
     const initialColorValue = root.style.getPropertyValue(INITIAL_COLOR_MODE_CSS_PROP)
 
     rawSetColorMode(initialColorValue)
