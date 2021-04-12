@@ -56,6 +56,7 @@ const GlobalStyles = createGlobalStyle `
     font-size: .8em;
   }
   html {
+    background: var(--color-primaryBackground);
     font-size: 10px;
     -moz-osx-font-smoothing: antialiased;
     -webkit-font-smoothing: antialiased;
@@ -73,12 +74,6 @@ const GlobalStyles = createGlobalStyle `
   input[type="search"]::-webkit-search-decoration,
   input[type="search"]::-webkit-search-cancel-button {
     -webkit-appearance: none;
-  }
-  *::placeholder {
-    color: var(--secondaryColor);
-  }
-  *::-webkit-input-placeholder {
-    color: var(--secondaryColor);
   }
 
   @media (prefers-reduced-motion: reduce) {
