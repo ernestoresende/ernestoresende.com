@@ -7,19 +7,17 @@ import { BiRightArrowAlt } from 'react-icons/bi'
 
 import * as V from '../../styles/variables'
 
-// @todo: create proper hover styles for the blog item
-
 const PostContainer = styled(props => <GatsbyLink {...props} />)`
   font-family: ${V.FontFaces.Milliard};
   display: flex;
   text-decoration: none;
-  padding-bottom: 55px;
-
-  max-width: 700px;
-  margin: 0 auto;
-
-  padding: 48px;
   border-radius: 10px;
+  padding: ${V.Space.md} ${V.Space.lg};
+  transition: 300ms ease;
+
+  :hover {
+    background: var(--color-secondaryBackground);
+  }
 `
 
 const TimeToRead = styled.p`
