@@ -1,26 +1,32 @@
 import React from 'react'
+import styled from 'styled-components'
+import { graphql } from 'gatsby'
+
 import Layout from '../components/common/Layout'
 import Hero from '../components/common/Hero'
-import { graphql } from 'gatsby'
 import BlogItem from '../components/common/BlogItem'
+import mixins from '../styles/mixins'
 
 const IndexPage = ({ data }) => {
-
-  // @todo: create a wrapper for the blog item components and properly organize
-  // them in sections.
+  const BlogSection = styled.section`
+    ${mixins.desktopAlignCenter}
+    ${mixins.sidePadding}
+  `
 
   return (
     <Layout>
       <Hero />
-      {data.allMdx.edges.map(edge => (
-        <BlogItem 
-          slug={edge.node.slug}
-          title={edge.node.frontmatter.title}
-          description={edge.node.frontmatter.description}
-          timeToRead={edge.node.timeToRead}
-          key={edge.node.id}
-        />
-      ))}
+      <BlogSection>
+        {data.allMdx.edges.map(edge => (
+          <BlogItem
+            slug={edge.node.slug}
+            title={edge.node.frontmatter.title}
+            description={edge.node.frontmatter.description}
+            timeToRead={edge.node.timeToRead}
+            key={edge.node.id}
+          />
+        ))}
+      </BlogSection>
     </Layout>
   )
 }

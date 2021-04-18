@@ -1,5 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
+
+import Navbar from '../common/Navbar'
 import GlobalStyles from '../../styles/global'
 
 const Main = styled.div`
@@ -24,7 +26,7 @@ const Layout = ({ children }) => {
     <Main>
       <GlobalStyles />
       <HeaderWrapper>
-        <p>Navigation will be here</p>
+        <Navbar isSticky={false} isHome={true} />
       </HeaderWrapper>
       <ContentWrapper>{children}</ContentWrapper>
       <FooterWrapper>
