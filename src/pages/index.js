@@ -14,7 +14,7 @@ const IndexPage = ({ data }) => {
   `
 
   return (
-    <Layout>
+    <Layout isNavHome={true} isNavSticky={false} >
       <Hero />
       <BlogSection>
         {data.allMdx.edges.map(edge => (

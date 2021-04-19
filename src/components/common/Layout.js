@@ -21,12 +21,12 @@ const FooterWrapper = styled.footer`
   flex: 0 1 40px;
 `
 
-const Layout = ({ children }) => {
+const Layout = ({ children, isNavSticky, isNavHome }) => {
   return (
     <Main>
       <GlobalStyles />
       <HeaderWrapper>
-        <Navbar isSticky={false} isHome={true} />
+        <Navbar isSticky={isNavSticky} isHome={isNavHome} />
       </HeaderWrapper>
       <ContentWrapper>{children}</ContentWrapper>
       <FooterWrapper>
