@@ -18,6 +18,9 @@ const PostContainer = styled(props => <GatsbyLink {...props} />)`
   :hover {
     background: var(--color-secondaryBackground);
   }
+  :focus {
+    background: var(--color-secondaryBackground);
+  }
 `
 
 const TimeToRead = styled.p`
