@@ -1,9 +1,14 @@
-import React, { useState } from 'react'
+import React, { useState, useRef } from 'react'
 import styled from 'styled-components'
 import { Link as GatsbyLink } from 'gatsby'
 
-// import ToggleTheme from '../common/ToggleTheme'
+import { HiMenuAlt3 } from 'react-icons/hi'
+import { IoMdClose } from 'react-icons/io'
+import { BiChevronDown } from 'react-icons/bi'
 
+import { useDetectOutsideClick } from '../../hooks/useDetectOutsideClick'
+
+import ToggleTheme from '../common/ToggleTheme'
 import mixins from '../../styles/mixins'
 import media from '../../styles/media'
 import * as V from '../../styles/variables'
@@ -32,8 +37,8 @@ const MobileMenu = styled.nav`
   right: 0;
   overflow: hidden;
   z-index: 15;
-  background: var(--color-background);
-  color: var(--color-text);
+  background: var(--color-primaryBackground);
+  color: var(--color-primaryText);
 
   padding: 36px;
 
@@ -58,6 +63,10 @@ const Main = styled.div`
   z-index: 3;
   width: 100%;
   background: ${props => (props.isHome ? 'var(--color-secondaryBackground)' : 'var(--color-primaryBackground)')};
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 
   height: 65px;
   position: ${props => (props.isSticky ? 'fixed' : 'relative')};
@@ -84,79 +93,114 @@ const NameContainer = styled(props => <GatsbyLink {...props} />)`
   text-decoration: none;
   padding-right: 64px;
   font-size: 20px;
-  font-weight: 600;
+  font-weight: 500;
   letter-spacing: -0.015em;
+  padding-left: 50px;
+  padding-right: 50px;
   ${media.tablet`font-size: 18px;`}
-`
-const NavContainer = styled.nav`
-  display: flex;
-  flex-direction: row;
 `
 const NavList = styled.ul`
   display: flex;
-  list-style: none;
   ${media.tablet`display:none;`}
 `
 const StyledLink = styled(props => <GatsbyLink {...props} />)`
-  font-family: ${V.FontFaces.Milliard};
-  font-size: 16px;
-  font-weight: 400;
-  margin: 0 0 0 25px;
-  color: var(--color-primaryText);
-  display: inline-block;
-  position: relative;
-  overflow: hidden;
-  transition: all ease-in-out 200ms;
-  text-decoration: none;
-
-  :hover {
-    color: var(--color-secondaryText);
-  }
-  ${media.desktop`margin: 0 25px 0 0;`};
-  ${media.tablet`
-    font-size: 26px;
-    margin: 8px 0 8px 0;
-  `};
+  ${mixins.styledLink}
 `
-const StyledIcon = styled.div``
+const StyledDropdown = styled.button`
+  ${mixins.styledLink}
+  cursor: pointer;
+  svg {
+    width: ${V.Space.sm};
+    height: ${V.Space.sm};
+    position: relative;
+    top: 2px;
+    left: 3px;
+  }
+`
+const DropdownMenuNav = styled.nav `
+  background: var(--color-primaryBackground);
+  padding: ${V.Space.xs};
+  border-radius: 5px;
+  position: absolute;
+  top: 60px;
+  width: 300px;
+  box-shadow: ${V.BoxShadow.default};
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
+
+  &[data-active="true"] {
+    opacity: 1;
+    visibility: initial;
+    transform: translateY(0);
+  }
+`
+const StyledIcon = styled.div`
+  svg {
+    color: var(--color-primaryText);
+    width: 3.2rem;
+    height: 3.2rem;
+  }
+`
 
 const Navbar = ({ isSticky, isHome }) => {
+  const dropdownRef = useRef(null)
+  const [isActive, setIsActive] = useDetectOutsideClick(dropdownRef, false)
   const [showMobileMenu, setShowMobileMenu] = useState(false)
+
+  const onDropdownMenuClick = () => setIsActive(!isActive)
 
   return (
     <Transition>
       <MobileMenu className={showMobileMenu ? 'active-mobile-menu' : 'hidden-mobile-menu'}>
         <button className='close-menu' onClick={() => setShowMobileMenu(false)}>
           <StyledIcon>
-            <p>At some time there will be a icon here</p>
+            <IoMdClose />
           </StyledIcon>
         </button>
         <nav className='links-container'>
           <StyledLink to='/blog'>Blog</StyledLink>
+          <StyledLink to='/#projects'>Projects</StyledLink>
           <StyledLink to='/about'>About</StyledLink>
-          <StyledLink to='/#connect'>Connect</StyledLink>
+          <StyledLink to='/#contact'>Contact</StyledLink>
         </nav>
-        {/* <ToggleTheme /> */}
+        <ToggleTheme />
       </MobileMenu>
 
       <Main isSticky={isSticky} isHome={isHome}>
+        <NameContainer to='/'>ErRe</NameContainer>
+        <NavList>
+          <li>
+            <StyledDropdown onClick={onDropdownMenuClick}>
+              Blog
+              <BiChevronDown />
+            </StyledDropdown>
+            <DropdownMenuNav ref={dropdownRef} data-active={isActive}>
+              <ul>
+                <li>
+                  <StyledLink to='#'>Gonna map</StyledLink>
+                </li>
+                <li>
+                  <StyledLink to='#'>Through topics</StyledLink>
+                </li>
+                <li>
+                  <StyledLink to='#'>Maybe</StyledLink>
+                </li>
+              </ul>
+            </DropdownMenuNav>
+          </li>
+          <li><StyledLink to='/projects'>Projects</StyledLink></li>
+          <li><StyledLink to='/about'>About</StyledLink></li>
+          <li><StyledLink to='/#contact'>Contact</StyledLink></li>
+        </NavList>
         <FlexContainer>
-          <NavContainer>
-            <NameContainer to='/'>ErRe</NameContainer>
-            <NavList>
-              <StyledLink to='/blog'>Blog</StyledLink>
-              <StyledLink to='/#projects'>Projects</StyledLink>
-              <StyledLink to='/about'>About</StyledLink>
-              <StyledLink to='/#contact'>Contact</StyledLink>
-            </NavList>
-          </NavContainer>
-
           <div className='hide-toggle-theme'>
-            <p>Toggle Theme will be here sometime</p>
+            <ToggleTheme />
           </div>
           <button className='hide-menu-icon' onClick={() => setShowMobileMenu(true)}>
             <StyledIcon>
-              <span className='iconify' data-icon='eva:menu-2-outline' data-inline='false' />
+              <HiMenuAlt3 />
             </StyledIcon>
           </button>
         </FlexContainer>

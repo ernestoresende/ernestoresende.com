@@ -1,5 +1,6 @@
 import { css } from 'styled-components'
 import media from './media'
+import * as V from './variables'
 
 const mixins = {
   flexCenter: css`
@@ -31,6 +32,28 @@ const mixins = {
     padding-left: 50px;
     padding-right: 50px;
     ${media.phablet`padding-left: 15px; padding-right: 15px;`};
+  `,
+
+  styledLink: css`
+    font-family: ${V.FontFaces.Milliard};
+    font-size: 16px;
+    font-weight: 300;
+    margin: 0 16px;
+    color: var(--color-primaryText);
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+    transition: all ease-in-out 200ms;
+    text-decoration: none;
+
+    :hover {
+      color: var(--color-secondaryText);
+    }
+    ${media.desktop`margin: 0 25px 0 0;`};
+    ${media.tablet`
+    font-size: 26px;
+    margin: 8px 0 8px 0;
+  `};
   `,
 }
 

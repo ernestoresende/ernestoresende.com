@@ -1,19 +1,14 @@
 import React from 'react'
 
-import { COLORS, COLOR_MODE_KEY, INITIAL_COLOR_MODE_CSS_PROP } from '../styles/variables'
+import {
+  COLORS,
+  COLOR_MODE_KEY,
+} from '../styles/variables'
 
 export const ThemeContext = React.createContext()
 
 export const ThemeProvider = ({ children }) => {
-  const [colorMode, rawSetColorMode] = React.useState(undefined)
-
-  React.useEffect(() => {
-    const root = window.document.documentElement
-    
-    const initialColorValue = root.style.getPropertyValue(INITIAL_COLOR_MODE_CSS_PROP)
-
-    rawSetColorMode(initialColorValue)
-  }, [])
+  const [colorMode, rawSetColorMode] = React.useState('light')
 
   const contextValue = React.useMemo(() => {
     function setColorMode(newValue) {
@@ -36,5 +31,9 @@ export const ThemeProvider = ({ children }) => {
     }
   }, [colorMode, rawSetColorMode])
 
-  return <ThemeContext.Provider value={contextValue}>{children}</ThemeContext.Provider>
+  return (
+    <ThemeContext.Provider value={contextValue}>
+      {children}
+    </ThemeContext.Provider>
+  )
 }
