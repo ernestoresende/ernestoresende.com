@@ -2,6 +2,8 @@ import React from 'react'
 import styled from 'styled-components'
 import * as V from '../../styles/variables'
 import HeroMask from '../../assets/HeroMask'
+import media from '../../styles/media'
+import mixins from '../../styles/mixins'
 
 const MainContainer = styled.header`
   display: flex;
@@ -12,10 +14,16 @@ const BlockModule = styled.div`
   position: relative;
 `
 
-const BlockContainer = styled.div `
+const BlockContainer = styled.div`
+  ${mixins.sidePadding};
   text-align: center;
-  padding: 128px;
+  padding-top: ${V.Space.xlg};
+  padding-bottom: ${V.Space.xxlg};
   background: var(--color-secondaryBackground);
+  ${media.tablet`
+      padding-top: ${V.Space.md};
+      padding-bottom: ${V.Space.xxlg};
+    `};
 
   h1 {
     font-family: ${V.FontFaces.Lora};
@@ -25,6 +33,9 @@ const BlockContainer = styled.div `
     letter-spacing: -0.015em;
     padding-bottom: ${V.Space.default};
     color: var(--color-primaryText);
+    ${media.desktop`
+      font-size: 10vw;
+    `};
   }
   h2 {
     font-family: ${V.FontFaces.Milliard};
@@ -33,6 +44,9 @@ const BlockContainer = styled.div `
     max-width: 450px;
     margin: 0 auto;
     color: var(--color-primaryText);
+    ${media.phablet`
+      font-size: 4.8vw;
+    `};
   }
 `
 
@@ -52,8 +66,10 @@ const Hero = () => {
       <BlockModule>
         <BlockContainer>
           <h1>Ernesto Resende</h1>
-          <h2><b>UI Designer</b> and <b>Front-end Web Developer</b> building stuff for the web.</h2> 
-        </BlockContainer> 
+          <h2>
+            <b>UI Designer</b> and <b>Front-end Web Developer</b> building stuff for the web.
+          </h2>
+        </BlockContainer>
       </BlockModule>
 
       {/* Wave mask from the hero component */}
