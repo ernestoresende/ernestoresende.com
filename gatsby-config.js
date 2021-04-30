@@ -44,6 +44,7 @@ module.exports = {
     },
     'gatsby-image',
     'gatsby-transformer-sharp',
+    'gatsby-plugin-styled-components',
     'gatsby-plugin-sharp',
     'gatsby-plugin-catch-links',
     'gatsby-plugin-sitemap',
