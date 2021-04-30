@@ -14,12 +14,13 @@ import LoraRegularWOFF2 from '../fonts/Lora/woff2/LoraRegular.woff2'
 import LoraSemiBoldWOFF2 from '../fonts/Lora/woff2/LoraSemiBold.woff2'
 import LoraBoldWOFF2 from '../fonts/Lora/woff2/LoraBold.woff2'
 
-const FontFaces = css `
+const FontFaces = css`
   @font-face {
     font-family: 'Milliard';
     src: url(${MilliardRegularWOFF}) format('woff');
     font-weight: 400;
     font-style: normal;
+    font-display: block;
   }
 
   @font-face {
@@ -27,6 +28,7 @@ const FontFaces = css `
     src: url(${MilliardMediumWOFF}) format('woff');
     font-weight: 600;
     font-style: normal;
+    font-display: block;
   }
 
   @font-face {
@@ -34,18 +36,21 @@ const FontFaces = css `
     src: url(${MilliardBoldWOFF}) format('woff');
     font-weight: 700;
     font-style: normal;
+    font-display: block;
   }
   @font-face {
     font-family: 'Milliard';
     src: url(${MilliardRegularWOFF2}) format('woff2');
     font-weight: 400;
     font-style: normal;
+    font-display: block;
   }
   @font-face {
     font-family: 'Milliard';
     src: url(${MilliardMediumWOFF2}) format('woff2');
     font-weight: 600;
     font-style: normal;
+    font-display: block;
   }
 
   @font-face {
@@ -53,6 +58,7 @@ const FontFaces = css `
     src: url(${MilliardBoldWOFF2}) format('woff2');
     font-weight: 700;
     font-style: normal;
+    font-display: block;
   }
 
   @font-face {
@@ -60,6 +66,7 @@ const FontFaces = css `
     src: url(${LoraRegularWOFF}) format('woff');
     font-weight: 400;
     font-style: normal;
+    font-display: block;
   }
 
   @font-face {
@@ -67,6 +74,7 @@ const FontFaces = css `
     src: url(${LoraSemiBoldWOFF}) format('woff');
     font-weight: 600;
     font-style: normal;
+    font-display: block;
   }
 
   @font-face {
@@ -74,18 +82,21 @@ const FontFaces = css `
     src: url(${LoraBoldWOFF}) format('woff');
     font-weight: 700;
     font-style: normal;
+    font-display: block;
   }
   @font-face {
     font-family: 'Lora';
     src: url(${LoraRegularWOFF2}) format('woff2');
     font-weight: 400;
     font-style: normal;
+    font-display: block;
   }
   @font-face {
     font-family: 'Lora';
     src: url(${LoraSemiBoldWOFF2}) format('woff2');
     font-weight: 600;
     font-style: normal;
+    font-display: block;
   }
 
   @font-face {
@@ -93,6 +104,7 @@ const FontFaces = css `
     src: url(${LoraBoldWOFF2}) format('woff2');
     font-weight: 700;
     font-style: normal;
+    font-display: block;
   }
 `
 

@@ -19,7 +19,7 @@ export const COLORS = {
 }
 
 export const BoxShadow = {
-  default: `0px 0px 8px rgba(0, 0, 30, 0.15)`,
+  default: `0px 0px 30px rgba(0, 0, 30, 0.15)`,
 }
 
 export const Space = {

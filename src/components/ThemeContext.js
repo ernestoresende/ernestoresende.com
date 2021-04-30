@@ -1,9 +1,6 @@
 import React from 'react'
 
-import {
-  COLORS,
-  COLOR_MODE_KEY,
-} from '../styles/variables'
+import { COLORS, COLOR_MODE_KEY } from '../styles/variables'
 
 export const ThemeContext = React.createContext()
 
@@ -31,9 +28,5 @@ export const ThemeProvider = ({ children }) => {
     }
   }, [colorMode, rawSetColorMode])
 
-  return (
-    <ThemeContext.Provider value={contextValue}>
-      {children}
-    </ThemeContext.Provider>
-  )
+  return <ThemeContext.Provider value={contextValue}>{children}</ThemeContext.Provider>
 }

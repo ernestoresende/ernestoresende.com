@@ -72,7 +72,7 @@ const ArticleWrapper = styled.article`
     `}
   }
   em {
-    font-size: 18px;  
+    font-size: 18px;
     font-style: italic;
     color: var(--color-highlights);
     ${media.thone`
@@ -137,16 +137,13 @@ const ArticleWrapper = styled.article`
 `
 
 export default function PageTemplate({ data: { mdx } }) {
-  console.log(mdx)
-
   return (
     <React.Fragment>
       <Layout isNavSticky={true} isNavHome={false}>
-
         <HeaderWrapper>
-            <Tag>{mdx.frontmatter.tags}</Tag>
-            <Title>{mdx.frontmatter.title}</Title>
-            <Description>{mdx.frontmatter.description}</Description>
+          <Tag>{mdx.frontmatter.tags}</Tag>
+          <Title>{mdx.frontmatter.title}</Title>
+          <Description>{mdx.frontmatter.description}</Description>
         </HeaderWrapper>
 
         <ArticleWrapper>

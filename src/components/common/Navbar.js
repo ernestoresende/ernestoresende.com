@@ -89,15 +89,17 @@ const FlexContainer = styled.div`
   }
 `
 const NameContainer = styled(props => <GatsbyLink {...props} />)`
+  font-family: ${V.FontFaces.Milliard};
   color: var(--color-primaryText);
   text-decoration: none;
-  padding-right: 64px;
-  font-size: 20px;
-  font-weight: 500;
-  letter-spacing: -0.015em;
   padding-left: 50px;
-  padding-right: 50px;
-  ${media.tablet`font-size: 18px;`}
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  ${media.tablet`
+    font-size: 18px;
+    padding-left: 15px;
+  `}
 `
 const NavList = styled.ul`
   display: flex;
@@ -117,7 +119,7 @@ const StyledDropdown = styled.button`
     left: 3px;
   }
 `
-const DropdownMenuNav = styled.nav `
+const DropdownMenuNav = styled.nav`
   background: var(--color-primaryBackground);
   padding: ${V.Space.xs};
   border-radius: 5px;
@@ -130,7 +132,7 @@ const DropdownMenuNav = styled.nav `
   transform: translateY(-10px);
   transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
 
-  &[data-active="true"] {
+  &[data-active='true'] {
     opacity: 1;
     visibility: initial;
     transform: translateY(0);
@@ -179,10 +181,10 @@ const Navbar = ({ isSticky, isHome }) => {
             <DropdownMenuNav ref={dropdownRef} data-active={isActive}>
               <ul>
                 <li>
-                  <StyledLink to='#'>Gonna map</StyledLink>
+                  <StyledLink to='#'>All posts</StyledLink>
                 </li>
                 <li>
-                  <StyledLink to='#'>Through topics</StyledLink>
+                  <StyledLink to='#'>Web Fundamentals</StyledLink>
                 </li>
                 <li>
                   <StyledLink to='#'>Maybe</StyledLink>
@@ -190,9 +192,15 @@ const Navbar = ({ isSticky, isHome }) => {
               </ul>
             </DropdownMenuNav>
           </li>
-          <li><StyledLink to='/projects'>Projects</StyledLink></li>
-          <li><StyledLink to='/about'>About</StyledLink></li>
-          <li><StyledLink to='/#contact'>Contact</StyledLink></li>
+          <li>
+            <StyledLink to='/projects'>Projects</StyledLink>
+          </li>
+          <li>
+            <StyledLink to='/about'>About</StyledLink>
+          </li>
+          <li>
+            <StyledLink to='/#contact'>Contact</StyledLink>
+          </li>
         </NavList>
         <FlexContainer>
           <div className='hide-toggle-theme'>

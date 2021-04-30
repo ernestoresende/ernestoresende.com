@@ -34,24 +34,20 @@ const ToggleLabel = styled.div`
 `
 
 const ToggleTheme = () => {
-  const {colorMode, setColorMode} = useContext(ThemeContext)
+  const { colorMode, setColorMode } = useContext(ThemeContext)
 
   return (
     <ToggleContainer>
       <ToggleLabel>
         <button
-          tabIndex="0"
+          tabIndex='0'
           title='Change between Light/Dark Mode'
           className='toggle-icon'
           onClick={() => {
             colorMode === undefined || colorMode === 'light' ? setColorMode('dark') : setColorMode('light')
           }}
         >
-          { colorMode === 'dark' ? (
-            <Sun />
-          ) : (
-            <Moon />
-          )}
+          {colorMode === 'dark' ? <Sun /> : <Moon />}
         </button>
       </ToggleLabel>
     </ToggleContainer>

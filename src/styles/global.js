@@ -1,7 +1,7 @@
 import { createGlobalStyle } from 'styled-components'
 import FontFaces from './typography'
 
-const GlobalStyles = createGlobalStyle `
+const GlobalStyles = createGlobalStyle`
   ${FontFaces};
 
   html, body, div, span, applet, object, iframe,
