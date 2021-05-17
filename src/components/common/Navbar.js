@@ -59,14 +59,20 @@ const MobileMenu = styled.nav`
   }
 `
 const Main = styled.div`
-  top: 0;
-  z-index: 3;
-  width: 100%;
-  background: ${props => (props.isHome ? 'var(--color-secondaryBackground)' : 'var(--color-primaryBackground)')};
-
   display: flex;
   align-items: center;
   justify-content: space-between;
+  ${media.tablet`height: 55px;`}
+  height: 65px;
+`
+const Header = styled.header`
+  backdrop-filter: blur(8px);
+  background-color: ${props => (props.isHome ? 'var(--color-secondaryBackground)' : 'var(--color-primaryBackgroundTransparent)')};
+  border-bottom: solid 1px var(--color-secondaryBackground);
+
+  top: 0;
+  z-index: 5;
+  width: 100%;
 
   height: 65px;
   position: ${props => (props.isSticky ? 'fixed' : 'relative')};
@@ -155,64 +161,66 @@ const Navbar = ({ isSticky, isHome }) => {
 
   return (
     <Transition>
-      <MobileMenu className={showMobileMenu ? 'active-mobile-menu' : 'hidden-mobile-menu'}>
-        <button className='close-menu' onClick={() => setShowMobileMenu(false)}>
-          <StyledIcon>
-            <IoMdClose />
-          </StyledIcon>
-        </button>
-        <nav className='links-container'>
-          <StyledLink to='/blog'>Blog</StyledLink>
-          <StyledLink to='/#projects'>Projects</StyledLink>
-          <StyledLink to='/about'>About</StyledLink>
-          <StyledLink to='/#contact'>Contact</StyledLink>
-        </nav>
-        <ToggleTheme />
-      </MobileMenu>
-
-      <Main isSticky={isSticky} isHome={isHome}>
-        <NameContainer to='/'>ErRe</NameContainer>
-        <NavList>
-          <li>
-            <StyledDropdown onClick={onDropdownMenuClick}>
-              Blog
-              <BiChevronDown />
-            </StyledDropdown>
-            <DropdownMenuNav ref={dropdownRef} data-active={isActive}>
-              <ul>
-                <li>
-                  <StyledLink to='#'>All posts</StyledLink>
-                </li>
-                <li>
-                  <StyledLink to='#'>Web Fundamentals</StyledLink>
-                </li>
-                <li>
-                  <StyledLink to='#'>Maybe</StyledLink>
-                </li>
-              </ul>
-            </DropdownMenuNav>
-          </li>
-          <li>
-            <StyledLink to='/projects'>Projects</StyledLink>
-          </li>
-          <li>
-            <StyledLink to='/about'>About</StyledLink>
-          </li>
-          <li>
-            <StyledLink to='/#contact'>Contact</StyledLink>
-          </li>
-        </NavList>
-        <FlexContainer>
-          <div className='hide-toggle-theme'>
-            <ToggleTheme />
-          </div>
-          <button className='hide-menu-icon' onClick={() => setShowMobileMenu(true)}>
+      <Header isSticky={isSticky} isHome={isHome}>
+        <MobileMenu className={showMobileMenu ? 'active-mobile-menu' : 'hidden-mobile-menu'}>
+          <button className='close-menu' onClick={() => setShowMobileMenu(false)}>
             <StyledIcon>
-              <HiMenuAlt3 />
+              <IoMdClose />
             </StyledIcon>
           </button>
-        </FlexContainer>
-      </Main>
+          <nav className='links-container'>
+            <StyledLink to='/blog'>Blog</StyledLink>
+            <StyledLink to='/#projects'>Projects</StyledLink>
+            <StyledLink to='/about'>About</StyledLink>
+            <StyledLink to='/#contact'>Contact</StyledLink>
+          </nav>
+          <ToggleTheme />
+        </MobileMenu>
+
+        <Main>
+          <NameContainer to='/'>ErRe</NameContainer>
+          <NavList>
+            <li>
+              <StyledDropdown onClick={onDropdownMenuClick}>
+                Blog
+                <BiChevronDown />
+              </StyledDropdown>
+              <DropdownMenuNav ref={dropdownRef} data-active={isActive}>
+                <ul>
+                  <li>
+                    <StyledLink to='#'>All posts</StyledLink>
+                  </li>
+                  <li>
+                    <StyledLink to='#'>Web Fundamentals</StyledLink>
+                  </li>
+                  <li>
+                    <StyledLink to='#'>Maybe</StyledLink>
+                  </li>
+                </ul>
+              </DropdownMenuNav>
+            </li>
+            <li>
+              <StyledLink to='/projects'>Projects</StyledLink>
+            </li>
+            <li>
+              <StyledLink to='/about'>About</StyledLink>
+            </li>
+            <li>
+              <StyledLink to='/#contact'>Contact</StyledLink>
+            </li>
+          </NavList>
+          <FlexContainer>
+            <div className='hide-toggle-theme'>
+              <ToggleTheme />
+            </div>
+            <button className='hide-menu-icon' onClick={() => setShowMobileMenu(true)}>
+              <StyledIcon>
+                <HiMenuAlt3 />
+              </StyledIcon>
+            </button>
+          </FlexContainer>
+        </Main>
+      </Header>
     </Transition>
   )
 }

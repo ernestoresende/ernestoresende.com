@@ -7,6 +7,10 @@ export const COLORS = {
     light: 'rgb(236, 241, 244)',
     dark: 'rgb(29, 29, 35)',
   },
+  primaryBackgroundTransparent: {
+    light: 'rgba(249, 249, 249, 0.90)',
+    dark: 'rgba(22, 22, 26, 0.90)',
+  },
 
   primaryText: {
     light: 'rgb(59, 63, 75)',
