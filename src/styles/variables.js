@@ -1,29 +1,25 @@
-export const COLORS = {
-  primaryBackground: {
-    light: 'rgb(249, 249, 249)',
-    dark: 'rgb(22, 22, 26)',
-  },
-  secondaryBackground: {
-    light: 'rgb(236, 241, 244)',
-    dark: 'rgb(29, 29, 35)',
-  },
-  primaryBackgroundTransparent: {
-    light: 'rgba(249, 249, 249, 0.90)',
-    dark: 'rgba(22, 22, 26, 0.90)',
+export const colorScheme = {
+  lightTheme: {
+    primaryBackground: 'rgb(249, 249, 249)',
+    secondaryBackground: 'rgb(236, 241, 244)',
+    primaryBackgroundTransparent: 'rgba(249, 249, 249, 0.90)',
+    secondaryBackgroundTransparent: 'rgba(236, 241, 244, 0.90)',
+    primaryText: 'rgb(59, 63, 75)',
+    secondaryText: 'rgb(107, 125, 144)',
+
+    boxShadow: '0px 0px 30px rgba(0, 0, 30, 0.15)',
   },
 
-  primaryText: {
-    light: 'rgb(59, 63, 75)',
-    dark: 'rgba(255, 255, 255, 0.95)',
-  },
-  secondaryText: {
-    light: 'rgb(107, 125, 144)',
-    dark: 'rgb(159, 179, 199)',
-  },
-}
+  darkTheme: {
+    primaryBackground: 'rgb(22, 22, 26)',
+    secondaryBackground: 'rgb(29, 29, 35)',
+    primaryBackgroundTransparent: 'rgba(22, 22, 26, 0.90)',
+    secondaryBackgroundTransparent: 'rgba(29, 29, 35, 0.90)',
+    primaryText: 'rgba(255, 255, 255, 0.95)',
+    secondaryText: 'rgb(159, 179, 199)',
 
-export const BoxShadow = {
-  default: `0px 0px 30px rgba(0, 0, 30, 0.15)`,
+    boxShadow: '0px 0px 30px rgba(0, 0, 30, 0.15)',
+  },
 }
 
 export const Space = {
@@ -41,6 +37,3 @@ export const FontFaces = {
   Lora: 'Lora, serif',
   Milliard: 'Milliard, serif',
 }
-
-export const COLOR_MODE_KEY = 'color-mode'
-export const INITIAL_COLOR_MODE_CSS_PROP = '--initial-color-mode'

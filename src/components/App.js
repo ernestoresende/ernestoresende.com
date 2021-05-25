@@ -1,9 +1,9 @@
 import React from 'react'
 
-import { ThemeProvider } from './ThemeContext'
+import GlobalContextProvider from '../styles/globalContext'
 
 function App({ children }) {
-  return <ThemeProvider>{children}</ThemeProvider>
+  return <GlobalContextProvider>{children}</GlobalContextProvider>
 }
 
 export default App

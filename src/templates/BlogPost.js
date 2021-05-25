@@ -27,7 +27,7 @@ const Title = styled.h1`
   font-size: 72px;
   font-weight: 700;
   line-height: 1.3;
-  color: var(--color-primaryText);
+  color: var(--primaryText);
   padding-top: 30px;
   ${media.tablet`
     font-size: 30px;
@@ -39,7 +39,7 @@ const Description = styled.h2`
   font-size: 22px;
   line-height: 32px;
   font-weight: 600;
-  color: var(--color-secondaryText);
+  color: var(--secondaryText);
   padding-top: 30px;
   ${media.tablet`
     font-size: 18px;
@@ -50,14 +50,14 @@ const Tag = styled.div`
   font-family: ${V.FontFaces.Milliard};
   font-size: 16px;
   font-weight: 600;
-  color: var(--color-secondaryText);
+  color: var(--secondaryText);
   text-transform: uppercase;
 `
 const ArticleWrapper = styled.article`
   ${mixins.desktopAlignCenter}
   ${mixins.sidePadding}
   font-family: ${V.FontFaces.Milliard};
-  color: var(--color-primaryText);
+  color: var(--primaryText);
   padding-top: 64px;
   max-width: 800px;
   overflow-wrap: break-word;
@@ -74,7 +74,7 @@ const ArticleWrapper = styled.article`
   em {
     font-size: 18px;
     font-style: italic;
-    color: var(--color-highlights);
+    color: var(--highlights);
     ${media.thone`
       font-size: 16px;
     `}
@@ -101,8 +101,9 @@ const ArticleWrapper = styled.article`
     `}
   }
   h1 {
+    font-family: var(--fontFace-Lora);
     font-size: 42px;
-    color: var(--color-text);
+    color: var(--primaryText);
     font-weight: 700;
     line-height: 1.2;
     padding: 20px 0 20px 0;
@@ -111,14 +112,16 @@ const ArticleWrapper = styled.article`
     `}
   }
   h2 {
+    font-family: var(--fontFace-Lora);
     font-size: 26px;
-    color: var(--color-text);
+    color: var(--text);
     font-weight: 700;
     padding: 20px 0 20px 0;
   }
   h3 {
+    font-family: var(--fontFace-Lora);
     font-size: 20px;
-    color: var(--color-text);
+    color: var(--primaryText);
     font-weight: 700;
     padding: 20px 0 20px 0;
   }
@@ -129,7 +132,6 @@ const ArticleWrapper = styled.article`
     overflow: hidden;
     border-style: solid;
     border-width: 1px;
-    border-color: var(--color-cards);
   }
   strong {
     font-weight: 700;

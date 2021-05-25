@@ -41,32 +41,31 @@ const Tags = ({ pageContext, data }) => {
     <React.Fragment>
       <Seo title={`${tag} Articles - Ernesto Resende`} />
       <Layout isNavHome={false} isNavSticky={false}>
-      <Main>
-        <h1 className="tag-title">{tag}</h1>
-        <GridContainer>
-          {edges.map(post => (
-            <BlogItem 
-              key={post.node.slug}
-              slug={`/blog/${post.node.slug}`}
-              timeToRead={post.node.timeToRead}
-              title={post.node.frontmatter.title}
-              description={post.node.frontmatter.description}
-              fixedHoverStyle={true}
-            />
-          ))}
-        </GridContainer>
-      </Main>
-
+        <Main>
+          <h1 className='tag-title'>{tag}</h1>
+          <GridContainer>
+            {edges.map(post => (
+              <BlogItem
+                key={post.node.slug}
+                slug={`/blog/${post.node.slug}`}
+                timeToRead={post.node.timeToRead}
+                title={post.node.frontmatter.title}
+                description={post.node.frontmatter.description}
+                fixedHoverStyle={true}
+              />
+            ))}
+          </GridContainer>
+        </Main>
       </Layout>
     </React.Fragment>
   )
 }
 
 export const pageQuery = graphql`
-  query($tag: String) {
+  query ($tag: String) {
     allMdx(
       limit: 2000
-    	sort: { fields: [frontmatter___date], order: DESC }
+      sort: { fields: [frontmatter___date], order: DESC }
       filter: { frontmatter: { tags: { in: [$tag] } } }
     ) {
       totalCount
@@ -82,7 +81,6 @@ export const pageQuery = graphql`
       }
     }
   }
-` 
+`
 
 export default Tags
-

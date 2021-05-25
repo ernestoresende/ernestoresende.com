@@ -39,7 +39,7 @@ const mixins = {
     font-size: 16px;
     font-weight: 300;
     margin: 0 16px;
-    color: var(--color-primaryText);
+    color: var(--primaryText);
     display: inline-block;
     position: relative;
     overflow: hidden;
@@ -47,7 +47,7 @@ const mixins = {
     text-decoration: none;
 
     :hover {
-      color: var(--color-secondaryText);
+      color: var(--secondaryText);
     }
     ${media.desktop`margin: 0 25px 0 0;`};
     ${media.tablet`

@@ -1,7 +1,11 @@
-import { createGlobalStyle } from 'styled-components'
-import FontFaces from './typography'
+import React, { useContext } from 'react'
+import { createGlobalStyle, ThemeProvider } from 'styled-components'
 
-const GlobalStyles = createGlobalStyle`
+import FontFaces from './typography'
+import { GlobalContext } from './globalContext'
+import * as V from './variables'
+
+const StyledGlobalStyles = createGlobalStyle`
   ${FontFaces};
 
   html, body, div, span, applet, object, iframe,
@@ -55,13 +59,6 @@ const GlobalStyles = createGlobalStyle`
   small {
     font-size: .8em;
   }
-  html {
-    background: var(--color-primaryBackground);
-    font-size: 10px;
-    -moz-osx-font-smoothing: antialiased;
-    -webkit-font-smoothing: antialiased;
-    -webkit-overflow-scrolling: touch;
-  }
   b, strong {
     font-weight: 600;
   }
@@ -76,6 +73,35 @@ const GlobalStyles = createGlobalStyle`
     -webkit-appearance: none;
   }
 
+  html {
+    --primaryBackground: ${props => props.theme.primaryBackground};
+    --secondaryBackground: ${props => props.theme.secondaryBackground};
+    --primaryBackgroundTransparent: ${props => props.theme.primaryBackgroundTransparent};
+    --secondaryBackgroundTransparent: ${props => props.theme.secondaryBackgroundTransparent};
+    --primaryText: ${props => props.theme.primaryText};
+    --secondaryText: ${props => props.theme.secondaryText};
+
+    --fontFace-Milliard: ${V.FontFaces.Milliard};
+    --fontFace-Lora: ${V.FontFaces.Lora};
+
+    --space-xxs: ${V.Space.xxs};
+    --space-xs: ${V.Space.xs};
+    --space-sm: ${V.Space.sm};
+    --space-default: ${V.Space.default};
+    --space-md: ${V.Space.md};
+    --space-lg: ${V.Space.lg};
+    --space-xlg: ${V.Space.xlg};
+    --space-xxlg: ${V.Space.xxlg};
+
+    --boxShadow-default: ${props => props.theme.boxShadow};
+
+    background: var(--primaryBackground);
+    font-size: 10px;
+    -moz-osx-font-smoothing: antialiased;
+    -webkit-font-smoothing: antialiased;
+    -webkit-overflow-scrolling: touch;
+  }
+
   @media (prefers-reduced-motion: reduce) {
     * {
       animation: none;
@@ -84,4 +110,33 @@ const GlobalStyles = createGlobalStyle`
   }
 `
 
-export default GlobalStyles
+const GlobalStyle = ({ children }) => {
+  const lightTheme = V.colorScheme.lightTheme
+  const darkTheme = V.colorScheme.darkTheme
+
+  const currentTheme = useContext(GlobalContext)
+
+  let theme
+
+  switch (currentTheme.theme) {
+    case 'dark':
+      theme = darkTheme
+      break
+    case 'light':
+      theme = lightTheme
+      break
+    default:
+      theme = lightTheme
+  }
+
+  console.log(theme)
+
+  return (
+    <ThemeProvider theme={theme}>
+      <StyledGlobalStyles />
+      {children}
+    </ThemeProvider>
+  )
+}
+
+export default GlobalStyle
