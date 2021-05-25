@@ -65,3 +65,22 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     })
   })
 }
+
+// https://www.gatsbyjs.org/docs/node-apis/#onCreateWebpackConfig
+exports.onCreateWebpackConfig = ({ actions }) => {
+  actions.setWebpackConfig({
+    resolve: {
+      alias: {
+        '@src': path.resolve(__dirname, 'src/'),
+        '@components': path.resolve(__dirname, 'src/components'),
+        '@fonts': path.resolve(__dirname, 'src/fonts'),
+        '@hooks': path.resolve(__dirname, 'src/hooks'),
+        '@assets': path.resolve(__dirname, 'src/assets'),
+        '@pages': path.resolve(__dirname, 'src/pages'),
+        '@styles': path.resolve(__dirname, 'src/styles'),
+        '@templates': path.resolve(__dirname, 'src/templates'),
+        '@content': path.resolve(__dirname, 'src/content'),
+      },
+    },
+  })
+}
