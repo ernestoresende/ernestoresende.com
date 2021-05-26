@@ -95,6 +95,9 @@ export const NameContainer = styled(props => <GatsbyLink {...props} />)`
   letter-spacing: -0.015em;
   ${media.tablet`
     font-size: 18px;
+    padding-left: 55px;
+  `}
+  ${media.phablet `
     padding-left: 15px;
   `}
 `
@@ -118,12 +121,12 @@ export const StyledDropdown = styled.button`
 `
 export const DropdownMenuNav = styled.nav`
   background: var(--primaryBackground);
-  padding: ${V.Space.xs};
+  padding: var(--space-xs);
   border-radius: 5px;
   position: absolute;
   top: 60px;
   width: 300px;
-  box-shadow: ${props => props.theme.boxShadow};
+  box-shadow: var(--boxShadow-default);
   opacity: 0;
   visibility: hidden;
   transform: translateY(-10px);

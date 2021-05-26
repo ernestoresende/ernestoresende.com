@@ -16,7 +16,7 @@ const Main = styled.div`
   ${mixins.sidePadding}
   .tag-title {
     font-family: ${V.FontFaces.Lora};
-    color: var(--color-primaryText);
+    color: var(--primaryText);
     font-size: 32px;
     font-weight: 600;
     margin-bottom: 24px;

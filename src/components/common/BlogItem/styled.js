@@ -23,6 +23,7 @@ export const PostContainer = styled(props => <GatsbyLink {...props} />)`
     background: var(--secondaryBackground);
     &[data-fixed-hover='true'] {
       box-shadow: var(--boxShadow-default);
+      transform: scale(1.02);
     }
   }
   :focus {
@@ -33,6 +34,9 @@ export const TimeToRead = styled.p`
   padding-bottom: var(--space-sm);
   font-size: 16px;
   color: var(--secondaryText);
+  ${media.thone`
+    font-size: 16px;
+  `};
 `
 export const Title = styled.h1`
   font-family: var(--fontFace-Lora);
@@ -45,6 +49,9 @@ export const Title = styled.h1`
 export const Description = styled.h2`
   font-size: 18px;
   color: var(--secondaryText);
+  ${media.thone`
+    font-size: 16px;
+  `};
 `
 export const IconWrapper = styled.div`
   padding-left: var(--space-lg);
@@ -52,7 +59,7 @@ export const IconWrapper = styled.div`
   align-items: center;
   color: var(--secondaryText);
   ${media.desktop`
-  padding-left: var(--space-default);
+  padding-left: var(--space-xsm);
     `};
   svg {
     width: 36px;

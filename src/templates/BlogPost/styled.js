@@ -1,16 +1,10 @@
-import React from 'react'
 import styled from 'styled-components'
-import { graphql } from 'gatsby'
-import { MDXRenderer } from 'gatsby-plugin-mdx'
-import { MDXProvider } from '@mdx-js/react'
 
-import Layout from '../components/common/Layout'
+import mixins from '@styles/mixins'
+import media from '@styles/media'
+import * as V from '@styles/variables'
 
-import mixins from '../styles/mixins'
-import media from '../styles/media'
-import * as V from '../styles/variables'
-
-const HeaderWrapper = styled.div`
+export const HeaderWrapper = styled.div`
   text-align: center;
   padding: 132px 0 32px 0;
   margin: 0 auto;
@@ -22,7 +16,7 @@ const HeaderWrapper = styled.div`
     width: 100%;
   `}
 `
-const Title = styled.h1`
+export const Title = styled.h1`
   font-family: ${V.FontFaces.Lora};
   font-size: 72px;
   font-weight: 700;
@@ -34,7 +28,7 @@ const Title = styled.h1`
     line-height: 1.1;
   `}
 `
-const Description = styled.h2`
+export const Description = styled.h2`
   font-family: ${V.FontFaces.Milliard};
   font-size: 22px;
   line-height: 32px;
@@ -46,25 +40,39 @@ const Description = styled.h2`
     line-height: 24px;
   `}
 `
-const Tag = styled.div`
+export const Tag = styled.div`
   font-family: ${V.FontFaces.Milliard};
   font-size: 16px;
   font-weight: 600;
   color: var(--secondaryText);
   text-transform: uppercase;
 `
-const ArticleWrapper = styled.article`
-  ${mixins.desktopAlignCenter}
-  ${mixins.sidePadding}
+export const ArticleWrapper = styled.article`
+  padding-top: 64px;
   font-family: ${V.FontFaces.Milliard};
   color: var(--primaryText);
-  padding-top: 64px;
-  max-width: 800px;
-  overflow-wrap: break-word;
+  
+  .wrapper-grid {
+    display: grid;
+    grid-template-columns:
+      1fr
+      min(110ch, 100%)
+      1fr;
+    overflow-wrap: break-word;
+  }
+
+  .wrapper-grid > * {
+    grid-column: 2;
+  }
+
+  .article-content-wrapper {
+    ${mixins.sidePadding};
+  }
 
   p {
+    ${mixins.sidePadding};
     font-size: 18px;
-    line-height: 1.7;
+    line-height: 1.8;
     padding-bottom: 30px;
     ${media.thone`
       font-size: 16px;
@@ -101,29 +109,34 @@ const ArticleWrapper = styled.article`
     `}
   }
   h1 {
+    ${mixins.sidePadding};
+    padding-bottom: var(--space-default);
+    padding-top: var(--space-default);
     font-family: var(--fontFace-Lora);
     font-size: 42px;
     color: var(--primaryText);
     font-weight: 700;
     line-height: 1.2;
-    padding: 20px 0 20px 0;
     ${media.tablet`
       font-size: 32px;
     `}
   }
   h2 {
-    font-family: var(--fontFace-Lora);
+    ${mixins.sidePadding};
+    padding-bottom: var(--space-default);
+    padding-top: var(--space-default);
     font-size: 26px;
     color: var(--text);
     font-weight: 700;
-    padding: 20px 0 20px 0;
   }
   h3 {
+    ${mixins.sidePadding};
+    padding-bottom: var(--space-default);
+    padding-top: var(--space-default);
     font-family: var(--fontFace-Lora);
     font-size: 20px;
     color: var(--primaryText);
     font-weight: 700;
-    padding: 20px 0 20px 0;
   }
   hr {
     display: block;
@@ -133,50 +146,40 @@ const ArticleWrapper = styled.article`
     border-style: solid;
     border-width: 1px;
   }
+  code {
+    padding: 5px;
+    border-radius: 3px;
+    font-family: var(--fontFace-iAWriterMono);
+    font-weight: bold;
+    font-size: 15px;
+    background-color: var(--secondaryBackground);
+    ${media.thone`
+      font-size: 14px;
+    `}
+  }
+  pre {
+    grid-column: 1 / -1;
+    max-height: 75vh;
+    margin-bottom: var(--space-default);
+    ::-webkit-scrollbar {
+      width: 0.6em; 
+      height: 0.6em;
+    }
+ 
+    ::-webkit-scrollbar-track {
+      box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    }
+
+    ::-webkit-scrollbar-corner {
+      box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    }
+ 
+    ::-webkit-scrollbar-thumb {
+      background-color: darkgrey;
+      outline: 0.5px solid slategrey;
+    }
+  }
   strong {
     font-weight: 700;
-  }
-`
-
-export default function PageTemplate({ data: { mdx } }) {
-  return (
-    <React.Fragment>
-      <Layout isNavSticky={true} isNavHome={false}>
-        <HeaderWrapper>
-          <Tag>{mdx.frontmatter.tags}</Tag>
-          <Title>{mdx.frontmatter.title}</Title>
-          <Description>{mdx.frontmatter.description}</Description>
-        </HeaderWrapper>
-
-        <ArticleWrapper>
-          <MDXProvider>
-            <MDXRenderer headings={mdx.headings} url={mdx.slug}>
-              {mdx.body}
-            </MDXRenderer>
-          </MDXProvider>
-        </ArticleWrapper>
-      </Layout>
-    </React.Fragment>
-  )
-}
-
-export const pageQuery = graphql`
-  query BlogPostQuery($id: String!) {
-    mdx(id: { eq: $id }) {
-      id
-      body
-      slug
-      timeToRead
-      frontmatter {
-        title
-        description
-        date
-        tags
-      }
-      headings {
-        depth
-        value
-      }
-    }
   }
 `
