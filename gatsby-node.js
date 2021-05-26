@@ -44,7 +44,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
     createPage({
       path: `/blog/${node.slug}`,
-      component: path.resolve(`./src/templates/BlogPost.js`),
+      component: path.resolve(`./src/templates/BlogPost/index.js`),
       context: {
         id: node.id,
         slug: node.slug,
@@ -58,7 +58,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   tags.forEach(tag => {
     createPage({
       path: `/tags/${_.kebabCase(tag.fieldValue)}/`,
-      component: path.resolve(`./src/templates/Tags.js`),
+      component: path.resolve(`./src/templates/Tags/index.js`),
       context: {
         tag: tag.fieldValue,
       },
