@@ -81,8 +81,17 @@ const StyledGlobalStyles = createGlobalStyle`
     --primaryText: ${props => props.theme.primaryText};
     --secondaryText: ${props => props.theme.secondaryText};
 
+    --infoCardBackground: ${props => props.theme.infoCardBackground};
+    --warningCardBackground: ${props => props.theme.warningCardBackground};
+    --successCardBackground: ${props => props.theme.successCardBackground};
+
+    --infoCardHighlight: ${props => props.theme.infoCardHighlight};
+    --warningCardHighlight: ${props => props.theme.warningCardHighlight};
+    --successCardHighlight: ${props => props.theme.successCardHighlight};
+
     --fontFace-Milliard: ${V.FontFaces.Milliard};
     --fontFace-Lora: ${V.FontFaces.Lora};
+    --fontFace-iAWriterMono: ${V.FontFaces.iAWriterMono};
 
     --space-xxs: ${V.Space.xxs};
     --space-xs: ${V.Space.xs};
