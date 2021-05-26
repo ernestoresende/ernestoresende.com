@@ -28,6 +28,12 @@ The DOM tree is generated when the browser parses the HTML document of a webpage
 
 Every time the browser is encumbered with the task of processing HTML markup it has to go trough all of the steps listed above; larger HTML markups will result in more time waiting for this process to finish.
 
+<Sidenote type="info">  
+
+  <p className='last-line'>The most common use for the DOM is to interact with HTML documents, but the DOM can be used to access XML and SVG as well, given that they work very similarly.</p>
+
+</Sidenote>
+
 With the DOM tree created, the nodes become accessible from JavaScript by using the `document` object. If you are familiar with writing operations like `document.getElementsById()` in JavaScript, you can kind of see where we are going here.
 
 A regular web page is nothing more but a document that can either be displayed in a browser, or as the HTML raw source. The DOM is responsible for representing that same document in a way it can be manipulated by other programs and/or user interaction.
@@ -52,15 +58,40 @@ When interacting with the DOM, you will be using objects such as `document` and 
 
 If we were to, for example, render a new element on that document tree, we could use `createElement` like this:
 
-```javascript
-const paragraph = document.createElement("p")
+```jsx
+import React from 'react'
+import Highlight, { defaultProps } from 'prism-react-renderer'
+import { theme } from './theme'
+import * as S from "./styled"
 
-// Appends the paragraph element to the body of the document
-document.body.appendChild(paragraph)
+const CodeBlock = ({ children, className }) => {
+  const language = className.replace(/language-/, '') || ''
 
-// Injects the value from the string on the paragraph node
-paragraph.innerHTML = "Hi there!"
+	// Gonna put a comment here to see how it shows up
 
+  return (
+    <S.CodeBlockWrapper>
+      <Highlight {...defaultProps} code={children} language={language} theme={theme}>
+      {({ className, style, tokens, getLineProps, getTokenProps }) => (
+        <pre className={className} style={{ ...style }}>
+          {tokens.map((line, index) => {
+            const lineProps = getLineProps({ line, key: index })
+            return (
+              <div key={index} {...lineProps}>
+                {line.map((token, key) => (
+                  <span key={key} {...getTokenProps({ token, key })} />
+                ))}
+              </div>
+            )
+          })}
+        </pre>
+      )}
+      </Highlight>
+    </S.CodeBlockWrapper>
+  )
+}
+
+export default CodeBlock
 ```
 
 // I intend to explore more iterations of different DOM manipulation techniques with vanilla JavaScript, and then move on to explain how some frameworks are working under de radar by making use of DOM manipulation.
@@ -77,13 +108,10 @@ These elements are then supplied to `ReactDOM.render`, which will be responsible
 
 For example, let's say that there is state variable called `isLoading` being set by an API call. While the content of the API is not available, that variable is defined to `true`. When that API call is resolved and the data is available to be showed on the UI, the state of `isLoading` is defined to false. Our JSX portion of the component will look somewhat like this:
 
-```jsx
-render() {
-	{ isLoading ? <Spinner> : (
-		<Main>
-			<p>{user.name}</p>
-	)}
-}
+```css
+.some-selector {
+	display: block;
+} 
 ```
 
 While `isLoading` is seen as false, we show a previously defined spinner component, to indicate the loading state to the user. When `isLoading` is read as false, we then show the content.

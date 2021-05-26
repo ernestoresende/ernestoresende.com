@@ -14,6 +14,9 @@ import LoraRegularWOFF2 from '../fonts/Lora/woff2/LoraRegular.woff2'
 import LoraSemiBoldWOFF2 from '../fonts/Lora/woff2/LoraSemiBold.woff2'
 import LoraBoldWOFF2 from '../fonts/Lora/woff2/LoraBold.woff2'
 
+import iAWriterMonoRegularWOFF from "../fonts/iAWriterMono/woff/iAWriterMonoRegular.woff"
+import iAWriterMonoRegularWOFF2 from "../fonts/iAWriterMono/woff2/iAWriterMonoRegular.woff2"
+
 const FontFaces = css`
   @font-face {
     font-family: 'Milliard';
@@ -103,6 +106,21 @@ const FontFaces = css`
     font-family: 'Lora';
     src: url(${LoraBoldWOFF2}) format('woff2');
     font-weight: 700;
+    font-style: normal;
+    font-display: block;
+  }
+
+  @font-face {
+    font-family: 'iAWriterMono';
+    src: url(${iAWriterMonoRegularWOFF}) format('woff');
+    font-weight: 400;
+    font-style: normal;
+    font-display: block;
+  }
+  @font-face {
+    font-family: 'iAWriterMono';
+    src: url(${iAWriterMonoRegularWOFF2}) format('woff2');
+    font-weight: 400;
     font-style: normal;
     font-display: block;
   }
