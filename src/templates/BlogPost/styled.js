@@ -71,7 +71,7 @@ export const ArticleWrapper = styled.article`
 
   p {
     ${mixins.sidePadding};
-    font-size: 18px;
+    font-size: 16px;
     line-height: 1.8;
     padding-bottom: 30px;
     ${media.thone`
@@ -151,7 +151,7 @@ export const ArticleWrapper = styled.article`
     border-radius: 3px;
     font-family: var(--fontFace-iAWriterMono);
     font-weight: bold;
-    font-size: 15px;
+    font-size: 14px;
     background-color: var(--secondaryBackground);
     ${media.thone`
       font-size: 14px;

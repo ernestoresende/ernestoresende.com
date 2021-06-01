@@ -1,6 +1,7 @@
 import React from 'react'
 
 import Navbar from '@components/common/Navbar'
+import Footer from '@components/common/Footer'
 import GlobalStyles from '@styles/global'
 import * as S from './styled'
 
@@ -13,7 +14,7 @@ const Layout = ({ children, isNavSticky, isNavHome }) => {
       </S.HeaderWrapper>
       <S.ContentWrapper>{children}</S.ContentWrapper>
       <S.FooterWrapper>
-        <p>Footer will be here</p>
+        <Footer />
       </S.FooterWrapper>
     </S.Main>
   )
