@@ -42,7 +42,7 @@ module.exports = {
         ],
       },
     },
-    'gatsby-image',
+    'gatsby-plugin-image',
     'gatsby-transformer-sharp',
     'gatsby-plugin-styled-components',
     'gatsby-plugin-sharp',
