@@ -27,9 +27,8 @@ const Navbar = ({ isSticky, isHome }) => {
           </button>
           <nav className='links-container'>
             <S.StyledLink to='/blog'>Blog</S.StyledLink>
-            <S.StyledLink to='/#projects'>Projects</S.StyledLink>
-            <S.StyledLink to='/about'>About</S.StyledLink>
-            <S.StyledLink to='/#contact'>Contact</S.StyledLink>
+            <S.StyledLink to='/work'>Work</S.StyledLink>
+            <S.StyledLink to='/work#contact'>Contact</S.StyledLink>
           </nav>
           <ToggleTheme />
         </S.MobileMenu>
@@ -57,13 +56,10 @@ const Navbar = ({ isSticky, isHome }) => {
               </S.DropdownMenuNav>
             </li>
             <li>
-              <S.StyledLink to='/projects'>Projects</S.StyledLink>
+              <S.StyledLink to='/work'>Work</S.StyledLink>
             </li>
             <li>
-              <S.StyledLink to='/about'>About</S.StyledLink>
-            </li>
-            <li>
-              <S.StyledLink to='/#contact'>Contact</S.StyledLink>
+              <S.StyledLink to='/work#contact'>Contact</S.StyledLink>
             </li>
           </S.NavList>
           <S.FlexContainer>
