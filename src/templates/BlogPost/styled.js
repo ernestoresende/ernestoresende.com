@@ -19,7 +19,6 @@ export const HeaderWrapper = styled.div`
 export const Title = styled.h1`
   font-family: ${V.FontFaces.Lora};
   font-size: 72px;
-  font-weight: 700;
   line-height: 1.3;
   color: var(--primaryText);
   padding-top: 30px;
@@ -29,7 +28,7 @@ export const Title = styled.h1`
   `}
 `
 export const Description = styled.h2`
-  font-family: ${V.FontFaces.Milliard};
+  font-family: ${V.FontFaces.Lora};
   font-size: 22px;
   line-height: 32px;
   font-weight: 600;
@@ -115,7 +114,6 @@ export const ArticleWrapper = styled.article`
     font-family: var(--fontFace-Lora);
     font-size: 42px;
     color: var(--primaryText);
-    font-weight: 700;
     line-height: 1.2;
     ${media.tablet`
       font-size: 32px;
@@ -127,7 +125,6 @@ export const ArticleWrapper = styled.article`
     padding-top: var(--space-default);
     font-size: 26px;
     color: var(--text);
-    font-weight: 700;
   }
   h3 {
     ${mixins.sidePadding};

@@ -6,6 +6,7 @@ export const colorScheme = {
     secondaryBackgroundTransparent: 'rgba(236, 241, 244, 0.90)',
     primaryText: 'rgb(59, 63, 75)',
     secondaryText: 'rgb(107, 125, 144)',
+    primaryHighlight: 'rgb(206, 220, 230)',
 
     infoCardBackground: 'rgb(199, 221, 255)',
     warningCardBackground: 'rgb(255, 238, 178)',
@@ -25,6 +26,7 @@ export const colorScheme = {
     secondaryBackgroundTransparent: 'rgba(29, 29, 35, 0.90)',
     primaryText: 'rgba(255, 255, 255, 0.95)',
     secondaryText: 'rgb(159, 179, 199)',
+    primaryHighlight: 'rgb(69, 69, 86)',
 
     infoCardBackground: 'rgba(136, 176, 254, 0.1)',
     warningCardBackground: 'rgba(255, 70, 0, 0.15)',

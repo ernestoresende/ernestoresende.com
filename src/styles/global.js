@@ -80,6 +80,7 @@ const StyledGlobalStyles = createGlobalStyle`
     --secondaryBackgroundTransparent: ${props => props.theme.secondaryBackgroundTransparent};
     --primaryText: ${props => props.theme.primaryText};
     --secondaryText: ${props => props.theme.secondaryText};
+    --primaryHighlight: ${props => props.theme.primaryHighlight};
 
     --infoCardBackground: ${props => props.theme.infoCardBackground};
     --warningCardBackground: ${props => props.theme.warningCardBackground};

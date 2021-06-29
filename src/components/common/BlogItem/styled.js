@@ -40,14 +40,13 @@ export const TimeToRead = styled.p`
 `
 export const Title = styled.h1`
   font-family: var(--fontFace-Lora);
-  font-weight: 600;
   padding-bottom: var(--space-sm);
   font-size: 28px;
   color: var(--primaryText);
   letter-spacing: -0.05rem;
 `
 export const Description = styled.h2`
-  font-size: 18px;
+  font-size: 16px;
   color: var(--secondaryText);
   ${media.thone`
     font-size: 16px;
