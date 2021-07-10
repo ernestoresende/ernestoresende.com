@@ -1,28 +1,185 @@
 import React from 'react'
+import styled from 'styled-components'
 import { StaticImage } from 'gatsby-plugin-image'
-import * as S from './styled'
 
 import Seo from '@components/common/Seo'
 import Layout from '@components/common/Layout'
 import Spacer from '@components/common/Spacer'
 
+import media from '@styles/media'
+import mixins from '@styles/mixins'
+
 import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa'
+
+/* eslint-disable react/jsx-no-target-blank */
+
+const Main = styled.div`
+  ${mixins.sidePadding}
+  ${mixins.desktopAlignCenter}
+`
+const ProjectHeader = styled.div`
+  font-family: var(--fontFace-Milliard);
+  color: var(--primaryText);
+`
+const ProjectTitle = styled.h1`
+  font-family: var(--fontFace-Lora);
+  font-size: 48px;
+  font-weight: 600;
+  ${media.bigDesktop`font-size: 26px;`};
+`
+const ProjectDescription = styled.p`
+  font-family: var(--fontFace-Lora);
+  font-size: 18px;
+  color: var(--secondaryText);
+`
+const ProjectInformation = styled.div`
+  display: flex;
+  font-size: 16px;
+
+  div {
+    margin-right: var(--space-lg);
+  }
+  li {
+    font-family: var(--fontFace-iAWriterMono);
+  }
+
+  .align-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  h1 {
+    font-weight: 700;
+    margin-bottom: var(--space-xs);
+  }
+  svg {
+    margin-top: var(--space-xs);
+    width: 24px;
+    height: 24px;
+    color: var(--primaryText);
+  }
+`
+const ProjectContent = styled.div`
+  .wrapper-grid {
+    display: grid;
+    grid-template-columns:
+      1fr
+      min(110ch, 100%)
+      1fr;
+    overflow-wrap: break-word;
+  }
+
+  .wrapper-grid > * {
+    grid-column: 2;
+  }
+  .image-wrapper {
+    width: 60%;
+    margin: 0 auto;
+    grid-column: 1 / 4;
+    ${media.bigDesktop`width: 90%;`};
+  }
+  .base-image {
+    border-radius: 10px;
+  }
+`
+const ProjectBody = styled.div`
+  ${mixins.sidePadding};
+  ${mixins.desktopAlignCenter};
+  padding-top: 64px;
+  font-family: var(--fontFace-Milliard);
+  color: var(--primaryText);
+  p {
+    font-size: 16px;
+    line-height: 1.8;
+    padding-bottom: 30px;
+    ${media.thone`
+      font-size: 16px;
+      line-height: 1.6;
+    `}
+  }
+  em {
+    font-size: 18px;
+    font-style: italic;
+    color: var(--highlights);
+    ${media.thone`
+      font-size: 16px;
+    `}
+  }
+  ul {
+    padding-left: 2.5rem;
+    list-style-type: disc;
+    margin-bottom: 30px;
+  }
+  ul li {
+    font-size: 16px;
+    margin-bottom: 1.6rem;
+    line-height: 30px;
+    ${media.thone`
+      font-size: 16px;
+      line-height: 1.6;
+    `}
+  }
+
+  a {
+    ${mixins.styledLink}
+    ${media.thone`
+      font-size: 16px;
+    `}
+  }
+  h1 {
+    padding-bottom: var(--space-default);
+    padding-top: var(--space-default);
+    font-family: var(--fontFace-Lora);
+    font-size: 42px;
+    color: var(--primaryText);
+    line-height: 1.2;
+    ${media.tablet`
+      font-size: 32px;
+    `}
+  }
+  h2 {
+    padding-bottom: var(--space-default);
+    padding-top: var(--space-default);
+    font-size: 26px;
+    color: var(--text);
+  }
+  h3 {
+    padding-bottom: var(--space-default);
+    padding-top: var(--space-default);
+    font-family: var(--fontFace-Lora);
+    font-size: 20px;
+    color: var(--primaryText);
+    font-weight: 700;
+  }
+  hr {
+    display: block;
+    margin-block-start: 0.5em;
+    margin-block-end: 0.5em;
+    overflow: hidden;
+    border-style: solid;
+    border-width: 1px;
+  }
+  strong {
+    font-weight: 700;
+  }
+`
 
 const EightSystemsDesignSystem = () => {
   return (
     <React.Fragment>
       <Seo title='EightSystems/design-system - Ernesto Resende' />
       <Layout isNavHome={false} isNavSticky={true}>
-        <S.Main>
+        <Main>
           <Spacer size={128} />
-          <S.ProjectHeader>
-            <S.ProjectTitle>EightSystems/design-system</S.ProjectTitle>
+          <ProjectHeader>
+            <ProjectTitle>EightSystems/design-system</ProjectTitle>
             <Spacer size={24} />
-            <S.ProjectDescription>
+            <ProjectDescription>
               The official design-system used by internal projects at EightSystems.
-            </S.ProjectDescription>
+            </ProjectDescription>
             <Spacer size={48} />
-            <S.ProjectInformation>
+            <ProjectInformation>
               <div>
                 <h1>Tech Stack</h1>
                 <ul>
@@ -32,21 +189,21 @@ const EightSystemsDesignSystem = () => {
               </div>
               <div className='align-center'>
                 <h1>Code</h1>
-                <a href='#'>
+                <a ref='noopener noreferrer' target='_blank' href='https://github.com/EightSystems/design-system'>
                   <FaGithub />
                 </a>
               </div>
               <div className='align-center'>
                 <h1>Demo</h1>
-                <a href='#'>
+                <a ref='noopener noreferrer' target='_blank' href='https://eightsystems.github.io/design-system/'>
                   <FaExternalLinkAlt />
                 </a>
               </div>
-            </S.ProjectInformation>
-          </S.ProjectHeader>
-        </S.Main>
+            </ProjectInformation>
+          </ProjectHeader>
+        </Main>
         <Spacer size={64} />
-        <S.ProjectContent>
+        <ProjectContent>
           <div className='wrapper-grid'>
             <StaticImage
               className='image-wrapper'
@@ -56,8 +213,8 @@ const EightSystemsDesignSystem = () => {
               loading='eager'
             />
           </div>
-        </S.ProjectContent>
-        <S.ProjectBody>
+        </ProjectContent>
+        <ProjectBody>
           <p>
             The internal lineup of EightSystems internal products is in constant evolution, and new projects tackling
             areas like online payment, delivery, and logistics are always in our roadmap, either in active development
@@ -93,7 +250,7 @@ const EightSystemsDesignSystem = () => {
             efficiently, managing project dependencies and having a strong, well documented component API are concerns
             that are strongly amplified by this kind of project.
           </p>
-        </S.ProjectBody>
+        </ProjectBody>
       </Layout>
     </React.Fragment>
   )
