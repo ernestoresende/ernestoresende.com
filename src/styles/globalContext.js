@@ -6,7 +6,7 @@ export const GlobalContext = React.createContext({
 })
 
 const GlobalContextProvider = props => {
-  const [currentTheme, setCurrentTheme] = useState('dark')
+  const [currentTheme, setCurrentTheme] = useState('light')
 
   const themeSwitchHandler = themeType => {
     setCurrentTheme(themeType)
