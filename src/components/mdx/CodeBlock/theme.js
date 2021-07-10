@@ -14,7 +14,7 @@ export const theme = {
       types: ['property'],
       style: {
         color: 'rgb(155, 109, 255)',
-      }
+      },
     },
     {
       types: ['comment'],
@@ -49,7 +49,7 @@ export const theme = {
     {
       types: ['deleted', 'string', 'attr-value', 'template-punctuation'],
       style: {
-        color: 'rgb(155, 109, 255)',
+        color: 'rgb(137, 216, 96)',
       },
     },
     {

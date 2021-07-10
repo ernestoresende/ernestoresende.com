@@ -50,7 +50,7 @@ export const ArticleWrapper = styled.article`
   padding-top: 64px;
   font-family: ${V.FontFaces.Milliard};
   color: var(--primaryText);
-  
+
   .wrapper-grid {
     display: grid;
     grid-template-columns:
@@ -71,8 +71,8 @@ export const ArticleWrapper = styled.article`
   p {
     ${mixins.sidePadding};
     font-size: 16px;
-    line-height: 1.8;
-    padding-bottom: 30px;
+    line-height: 1.7;
+    padding-bottom: var(--space-md);
     ${media.thone`
       font-size: 16px;
       line-height: 1.6;
@@ -136,12 +136,10 @@ export const ArticleWrapper = styled.article`
     font-weight: 700;
   }
   hr {
-    display: block;
-    margin-block-start: 0.5em;
-    margin-block-end: 0.5em;
-    overflow: hidden;
-    border-style: solid;
-    border-width: 1px;
+    width: 20%;
+    margin-bottom: var(--space-lg);
+    color: var(--primaryHighlight);
+    opacity: 0.5;
   }
   code {
     padding: 5px;
@@ -159,10 +157,10 @@ export const ArticleWrapper = styled.article`
     max-height: 75vh;
     margin-bottom: var(--space-default);
     ::-webkit-scrollbar {
-      width: 0.6em; 
+      width: 0.6em;
       height: 0.6em;
     }
- 
+
     ::-webkit-scrollbar-track {
       box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
     }
@@ -170,7 +168,7 @@ export const ArticleWrapper = styled.article`
     ::-webkit-scrollbar-corner {
       box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
     }
- 
+
     ::-webkit-scrollbar-thumb {
       background-color: darkgrey;
       outline: 0.5px solid slategrey;

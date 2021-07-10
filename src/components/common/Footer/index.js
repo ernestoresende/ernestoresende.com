@@ -1,7 +1,7 @@
 import React from 'react'
 
 import FooterMask from '@assets/FooterMask'
-import * as S from "./styled"
+import * as S from './styled'
 
 const Footer = () => {
   return (
@@ -11,12 +11,8 @@ const Footer = () => {
       </S.HeroMaskWrapper>
       <S.FooterWrapper>
         <S.FooterLeft>
-          <S.NameContainer to='/'>
-            ErNe
-          </S.NameContainer>
-          <S.Copyright>
-            © 2021 - Built by Ernesto Resende. All rights reserved.
-          </S.Copyright>
+          <S.NameContainer to='/'>ErNe</S.NameContainer>
+          <S.Copyright>© 2021 - Built by Ernesto Resende. All rights reserved.</S.Copyright>
         </S.FooterLeft>
         <S.FooterRight>
           <S.StyledLink to='/blog'>Blog</S.StyledLink>
@@ -29,4 +25,3 @@ const Footer = () => {
 }
 
 export default Footer
-

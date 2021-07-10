@@ -1,5 +1,5 @@
-import styled from "styled-components"
-import media from "@styles/media"
+import styled from 'styled-components'
+import media from '@styles/media'
 
 export const CodeBlockWrapper = styled.div`
   pre {
@@ -31,6 +31,6 @@ export const CodeBlockWrapper = styled.div`
   }
 `
 
-export const StyledLine = styled.div `
+export const StyledLine = styled.div`
   padding-bottom: 0.5em;
 `

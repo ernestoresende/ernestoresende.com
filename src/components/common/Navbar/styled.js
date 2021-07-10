@@ -64,7 +64,6 @@ export const Header = styled.header`
   top: 0;
   z-index: 5;
   width: 100%;
-
   height: 65px;
   position: ${props => (props.isSticky ? 'fixed' : 'relative')};
   ${media.tablet`height: 55px;`}
@@ -97,13 +96,18 @@ export const NameContainer = styled(props => <GatsbyLink {...props} />)`
     font-size: 18px;
     padding-left: 55px;
   `}
-  ${media.phablet `
+  ${media.phablet`
     padding-left: 15px;
   `}
 `
 export const NavList = styled.ul`
   display: flex;
   ${media.tablet`display:none;`}
+
+  li {
+    display: flex;
+    align-items: center;
+  }
 `
 export const StyledLink = styled(props => <GatsbyLink {...props} />)`
   ${mixins.styledLink}

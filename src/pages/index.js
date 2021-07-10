@@ -42,7 +42,7 @@ const Subtitle = styled.h2`
 `
 const Divider = styled.div`
   background: var(--primaryHighlight);
-    width: 100px;
+  width: 100px;
   height: 1px;
   margin: 0 auto;
   margin-bottom: var(--space-lg);

@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components'
-import media from "@styles/media"
+import media from '@styles/media'
 
 export const BaseWrapper = styled.aside`
   ${props =>
@@ -26,7 +26,7 @@ export const BaseWrapper = styled.aside`
   font-size: 15px;
   margin: 24px 28px 64px;
   border-radius: 6px 6px 6px 3px;
-  ${media.phablet `
+  ${media.phablet`
     font-size: 14px;
   `}
 
@@ -44,20 +44,20 @@ export const IconWrapper = styled.div`
   background-color: var(--primaryBackground);
   svg {
     ${props =>
-    props.type === 'success' &&
-    css`
-      color: var(--successCardHighlight);
-    `}
+      props.type === 'success' &&
+      css`
+        color: var(--successCardHighlight);
+      `}
+    ${props =>
+      props.type === 'warning' &&
+      css`
+        color: var(--warningCardHighlight);
+      `}
   ${props =>
-    props.type === 'warning' &&
-    css`
-      color: var(--warningCardHighlight);
-    `}
-  ${props =>
-    props.type === 'info' &&
-    css`
-      color: var(--infoCardHighlight);
-    `}
+      props.type === 'info' &&
+      css`
+        color: var(--infoCardHighlight);
+      `}
 
     width: 32px;
     height: 32px;

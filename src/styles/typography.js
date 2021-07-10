@@ -14,8 +14,8 @@ import LoraRegularWOFF2 from '../fonts/Lora/woff2/LoraRegular.woff2'
 import LoraSemiBoldWOFF2 from '../fonts/Lora/woff2/LoraSemiBold.woff2'
 import LoraBoldWOFF2 from '../fonts/Lora/woff2/LoraBold.woff2'
 
-import iAWriterMonoRegularWOFF from "../fonts/iAWriterMono/woff/iAWriterMonoRegular.woff"
-import iAWriterMonoRegularWOFF2 from "../fonts/iAWriterMono/woff2/iAWriterMonoRegular.woff2"
+import iAWriterMonoRegularWOFF from '../fonts/iAWriterMono/woff/iAWriterMonoRegular.woff'
+import iAWriterMonoRegularWOFF2 from '../fonts/iAWriterMono/woff2/iAWriterMonoRegular.woff2'
 
 const FontFaces = css`
   @font-face {

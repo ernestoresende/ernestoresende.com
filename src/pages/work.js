@@ -9,7 +9,8 @@ import Layout from '@components/common/Layout'
 import Spacer from '@components/common/Spacer'
 import ProjectItem from '@components/common/ProjectItem'
 
-import { FaFileAlt, FaPaperPlane, FaGithub, FaLinkedin } from 'react-icons/fa'
+import { FaGithub, FaLinkedin } from 'react-icons/fa'
+import { AiFillGitlab } from 'react-icons/ai'
 
 const StyledHero = styled(Hero)`
   text-align: left !important;
@@ -38,7 +39,7 @@ const AboutSection = styled.section`
     h2 {
       font-size: 24px;
       font-family: var(--fontFace-Lora);
-      font-weight: 700;
+      font-weight: 600;
     }
   }
 
@@ -60,13 +61,12 @@ const BigHeading = styled.h1`
   font-family: var(--fontFace-Lora);
   text-align: left;
   font-size: 50px;
-  font-weight: 600;
   ${media.phablet` font-size: 28px; `};
 `
 const MediumHeading = styled.h2`
+  font-family: var(--fontFace-Lora);
   text-align: left;
   font-size: 20px;
-  font-weight: 600;
   line-height: 1.4;
   margin-top: 22px;
   ${media.phablet` font-size: 18px; `};
@@ -135,8 +135,8 @@ const Highlight = () => {
 const Work = () => {
   return (
     <React.Fragment>
-      <Seo title='About - Ernesto Resende' />
-      <Layout isNavHome={true} isNavSticky={false}>
+      <Seo title='Work - Ernesto Resende' />
+      <Layout isNavHome={false} isNavSticky={true}>
         <AboutSection>
           <StyledHero>
             <HeadingSection>
@@ -151,16 +151,16 @@ const Work = () => {
                 connoisseur. I occasionally write on this very site.
               </MediumHeading>
               <Socials>
-                <a href='#'>
+                {/* <a href='#'>
                   <FaFileAlt />
-                </a>
-                <a href='#'>
-                  <FaPaperPlane />
-                </a>
-                <a href='#'>
+                </a> */}
+                <a target='_blank' rel='noopener noreferrer' href='https://github.com/ernestoresende'>
                   <FaGithub />
                 </a>
-                <a href='#'>
+                <a target='_blank' rel='noopener noreferrer' href='https://gitlab.com/thisisernesto'>
+                  <AiFillGitlab />
+                </a>
+                <a target='_blank' rel='noopener noreferrer' href='https://www.linkedin.com/in/ernesto-resende'>
                   <FaLinkedin />
                 </a>
               </Socials>
@@ -183,7 +183,7 @@ const Work = () => {
               <ProjectItem
                 projectTitle='EightSystems Design-System'
                 projectDescription='The design system used by internal projects at EightSystems'
-                projectLink='/'
+                projectLink='/projects/eightsystems-design-system'
               />
               <ProjectItem
                 projectTitle='Forgotten Tales'

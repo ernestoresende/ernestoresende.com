@@ -139,8 +139,6 @@ const GlobalStyle = ({ children }) => {
       theme = lightTheme
   }
 
-  console.log(theme)
-
   return (
     <ThemeProvider theme={theme}>
       <StyledGlobalStyles />

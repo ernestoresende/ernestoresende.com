@@ -48,9 +48,7 @@ export const Title = styled.h1`
 export const Description = styled.h2`
   font-size: 16px;
   color: var(--secondaryText);
-  ${media.thone`
-    font-size: 16px;
-  `};
+  line-height: 22px;
 `
 export const IconWrapper = styled.div`
   padding-left: var(--space-lg);

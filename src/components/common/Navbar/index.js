@@ -1,20 +1,20 @@
-import React, { useState, useRef } from 'react'
+import React, { useState } from 'react'
 
 import { HiMenuAlt3 } from 'react-icons/hi'
 import { IoMdClose } from 'react-icons/io'
-import { BiChevronDown } from 'react-icons/bi'
+// import { BiChevronDown } from 'react-icons/bi'
 
-import { useDetectOutsideClick } from '@hooks/useDetectOutsideClick'
+// import { useDetectOutsideClick } from '@hooks/useDetectOutsideClick'
 import ToggleTheme from '@components/common/ToggleTheme'
 
 import * as S from './styled'
 
 const Navbar = ({ isSticky, isHome }) => {
-  const dropdownRef = useRef(null)
-  const [isActive, setIsActive] = useDetectOutsideClick(dropdownRef, false)
+  // const dropdownRef = useRef(null)
+  // const [isActive, setIsActive] = useDetectOutsideClick(dropdownRef, false)
   const [showMobileMenu, setShowMobileMenu] = useState(false)
 
-  const onDropdownMenuClick = () => setIsActive(!isActive)
+  // const onDropdownMenuClick = () => setIsActive(!isActive)
 
   return (
     <S.Transition>
@@ -37,14 +37,14 @@ const Navbar = ({ isSticky, isHome }) => {
           <S.NameContainer to='/'>ErRe</S.NameContainer>
           <S.NavList>
             <li>
-              <S.StyledDropdown onClick={onDropdownMenuClick}>
+              {/* <S.StyledDropdown onClick={onDropdownMenuClick}>
                 Blog
                 <BiChevronDown />
               </S.StyledDropdown>
               <S.DropdownMenuNav ref={dropdownRef} data-active={isActive}>
                 <ul>
                   <li>
-                    <S.StyledLink to='#'>All posts</S.StyledLink>
+                    <S.StyledLink to='/blog'>All posts</S.StyledLink>
                   </li>
                   <li>
                     <S.StyledLink to='#'>Web Fundamentals</S.StyledLink>
@@ -53,7 +53,8 @@ const Navbar = ({ isSticky, isHome }) => {
                     <S.StyledLink to='#'>Maybe</S.StyledLink>
                   </li>
                 </ul>
-              </S.DropdownMenuNav>
+              </S.DropdownMenuNav> */}
+              <S.StyledLink to='/blog'>Blog</S.StyledLink>
             </li>
             <li>
               <S.StyledLink to='/work'>Work</S.StyledLink>

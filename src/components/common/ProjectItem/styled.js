@@ -1,6 +1,5 @@
 import React from 'react'
 import styled from 'styled-components'
-import media from '@styles/media'
 import { Link as GatsbyLink } from 'gatsby'
 
 export const Main = styled(props => <GatsbyLink {...props} />)`
@@ -31,7 +30,7 @@ export const IconWrapper = styled.div`
 export const ProjectTitle = styled.h1`
   font-family: var(--fontFace-Lora);
   font-size: 22px;
-  font-weight: 700;
+  font-weight: 600;
 `
 export const ProjectDescription = styled.p`
   font-size: 16px;

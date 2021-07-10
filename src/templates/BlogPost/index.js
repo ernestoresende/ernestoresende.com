@@ -3,6 +3,7 @@ import { graphql } from 'gatsby'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 import { MDXProvider } from '@mdx-js/react'
 
+import Seo from '@components/common/Seo'
 import Layout from '@components/common/Layout'
 import * as S from './styled'
 
@@ -17,6 +18,7 @@ export default function PageTemplate({ data: { mdx } }) {
 
   return (
     <React.Fragment>
+      <Seo title={`${mdx.frontmatter.title} - Ernesto Resende`} />
       <Layout isNavSticky={true} isNavHome={false}>
         <S.HeaderWrapper>
           <S.Tag>{mdx.frontmatter.tags}</S.Tag>
