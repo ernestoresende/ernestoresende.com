@@ -6,31 +6,63 @@ featured: https://res.cloudinary.com/ernestoresende/image/upload/v1603304966/og%
 tags: ['Web Fundamentals']
 ---
 
-Throughout the early learning stages of front-end development, it is very possible thay you've heard the term DOM being thrown around a lot. Modern tooling and frameworks like React and Angular made it so you barely notice about the DOM's existence at all, or even wrongly associated HTML and DOM as being one in the same thing.
+We've all manipulated the DOM at some point on our lives as web developers.
 
-In this article I aim at taking a very detailed, yet digestible approach at explaining what is the DOM, how it works, and how the tooling you use (or maybe even you, directly) are able to manipulate it to make things happen in the browser.
+Maybe you're messing around with some simple HTML markup, or doing complex state updates with a UI library like React or Angular. At some point, you're manipulating the document structure in some way.
+
+But what even **is** the object model? How does it correlate with the document? What exactly can be done with it, and how does the browser knows what do to with it?
+
+In this piece I aim at taking a very detailed, yet digestible approach at explaining what is the DOM, how it works, and how you and the tooling you use are able to manipulate it to make things happen in the browser.
+
+<Sidenote type="warning" title="Intended audience">
+
+  <p className='last-line'>This article assumes that you know some basic HTML, CSS and JavaScript and their respective roles on the web.</p>
+
+</Sidenote>
 
 # What is the DOM?
 
-DOM is the abbreviation for ***Document Object Model***. Think of it as tree-model representing the structure of what was created in the HTML document.
+DOM is the abbreviation for **Document Object Model**. Think of it as tree-model that represents the structure of what was created in the HTML document.
 
-// Create a graphical comparison between a simple HTML document and the respective DOM tree that it generates.
+Given the following HTML markup:
 
-Having this in mind we can already clear a common misconception. **The DOM is not the same thing as the HTML.** 
+```html
+<html>
+	<head>
+		<title>This is a title</title>
+	</head>
+	<body>
+		<h1>A heading<h1>
+		<a href="https://someplace.com">A link</a>
+	</body>
+<html>
+```
+
+This is the corresponding Document Object Model:
+
+// There is going to be an interactive tree-view component representing the document object model.
+
+Having this in mind we can already clear a common misconception. **The DOM is not the same thing as the HTML.**
+
+---
 
 Let's take a moment to have a detailed look at what is going on from the moment we request a webpage from a server, to the moment it is completely rendered in our screen:
 
-At the very root of the process of building the Document Object Model, the browser reads the raw bytes from the HTML sent by the network, and translates them to individual characters based on the file's encoding (like UTF-8 for example). The browser then converts these into distinct tokens specified by the W3C HTML5 standard, and the emitted tokens are converted into objects. These are the objects that are going to be composing the DOM. 
+At the very root of this process, the browser reads the raw bytes from the HTML sent by the network, and translates them to individual characters.
+
+It then converts these into distinct tokens, that are then converted into objects. These are the objects that are going to be composing the DOM.
+
+---
 
 Since the HTML markup defines clear relationships between different tags, the objects are grouped in a tree-like data structure that reflects the relationships established in the original markup.
 
-The DOM tree is generated when the browser parses the HTML document of a webpage, and as seen in the example above, has a different way of structuring the elements — originally written in HTML — in what we call ***nodes.***
+The DOM tree is generated when the browser parses the HTML document of a webpage, and as seen in the example above, has a different way of structuring the elements — originally written in HTML — in what we call **nodes**.
 
 Every time the browser is encumbered with the task of processing HTML markup it has to go trough all of the steps listed above; larger HTML markups will result in more time waiting for this process to finish.
 
-<Sidenote type="info">  
+<Sidenote type="info" title="Other languages">
 
-  <p className='last-line'>The most common use for the DOM is to interact with HTML documents, but the DOM can be used to access XML and SVG as well, given that they work very similarly.</p>
+  <p className='last-line'>The most common use for the DOM is to interact with HTML documents, but the DOM can be used to access XML and SVG documents as well, given that they work very similarly.</p>
 
 </Sidenote>
 
@@ -38,84 +70,44 @@ With the DOM tree created, the nodes become accessible from JavaScript by using 
 
 A regular web page is nothing more but a document that can either be displayed in a browser, or as the HTML raw source. The DOM is responsible for representing that same document in a way it can be manipulated by other programs and/or user interaction.
 
-# And what about the CSSOM?
-
-"***Wait, what?***", some will be asking themselves right now.
-
-Yes, just as we have a tree-model document for the HTML elements we write, we also have the same document for the CSS... Well, not the **same** document, but you get the idea.
+# So, what about the CSS?
+Well, yes. Just as we have a tree-model document for the HTML elements we write, we also have the same document for the CSS.
 
 HTML markup is transformed into a Document Object Model; CSS markup is transformed into a CSS Object Model; that is the CSSOM. The DOM and CSSOM are independent data structures.
 
 On a "page lifecycle", the DOM and CSSOM trees are combined into a render tree containing only the nodes that are necessary to render a given page. The rendered tree is then used to compute the exact position and size of each object used in the last step of that cycle, the painting process.
 
+<Sidenote type="info">
+
+  <p className='last-line'>The render-tree construction, layout and painting are a whole thing of their own, and I plan on covering them with the care they deserve in a future web-performance related article.</p>
+
+</Sidenote>
+
 # DOM manipulation
 
-The DOM itself is not a programming language, but without it, scripting languages like JavaScript wouldn't have any notion of webpages, HTML documents and their elements.
+The DOM itself is not a programming language, but without it, scripting languages like JavaScript wouldn't have any notion of what the heck are the HTML documents and their elements.
 
-You, as a developer, don't need to do anything special or complex to begin accessing the DOM. The simple act of injecting an inline `<script>` tag in your HTML document and firing a `window.alert("Hello World")` is an act of DOM manipulation. 
+As a developer, you don't need to do anything special or complex to begin accessing and manipulating the DOM; you will be using objects such as `document` and `window` and their interfaces, such as `querySelector` and `createElement`.
 
-When interacting with the DOM, you will be using objects such as `document` and `window` and their interfaces, such as `querySelector` and `createElement`.
+<Sidenote type="info">
 
-If we were to, for example, render a new element on that document tree, we could use `createElement` like this:
+  <p className='last-line'>The examples above are all based on the syntax used to access the DOM using JavaScript. But JavaScript is not the only language that is capable of accessing DOM elements.</p>
 
-```jsx
-import React from 'react'
-import Highlight, { defaultProps } from 'prism-react-renderer'
-import { theme } from './theme'
-import * as S from "./styled"
+</Sidenote>
 
-const CodeBlock = ({ children, className }) => {
-  const language = className.replace(/language-/, '') || ''
+---
 
-	// Gonna put a comment here to see how it shows up
+Let's assume the existence of an HTML document with a anchor tag on it. To manipulate it from JavaScript, you would proceed with steps like:
 
-  return (
-    <S.CodeBlockWrapper>
-      <Highlight {...defaultProps} code={children} language={language} theme={theme}>
-      {({ className, style, tokens, getLineProps, getTokenProps }) => (
-        <pre className={className} style={{ ...style }}>
-          {tokens.map((line, index) => {
-            const lineProps = getLineProps({ line, key: index })
-            return (
-              <div key={index} {...lineProps}>
-                {line.map((token, key) => (
-                  <span key={key} {...getTokenProps({ token, key })} />
-                ))}
-              </div>
-            )
-          })}
-        </pre>
-      )}
-      </Highlight>
-    </S.CodeBlockWrapper>
-  )
-}
+```javascript
+// "Select" the element and store a reference to it in a variable
+const link = document.querySelector('a');
 
-export default CodeBlock
+// Manipulates the content of the text string inside the anchor tag
+link.textContent = 'This is a link';
+
+// Change the anchor tag's URL
+link.href = 'https://someplace.com';
 ```
 
-// I intend to explore more iterations of different DOM manipulation techniques with vanilla JavaScript, and then move on to explain how some frameworks are working under de radar by making use of DOM manipulation.
-
-# When frameworks do the hard work for us
-
-One very common example of having multiple layers of DOM manipulation abstracted for your convenience is when you're using a framework like React.
-
-React uses JSX, a syntax extension for JavaScript that looks and feels very much like writing regular HTML to define the view and UI of it's components. The caveat here is that JSX is **not** HTML; it accepts JavaScript expressions just like the rest of a React project.
-
-By default, JSX is compiled to `React.createElement()` calls. Those calls are responsible for creating new elements by describing their type, properties and children.
-
-These elements are then supplied to `ReactDOM.render`, which will be responsible for rendering these elements in the DOM, and smartly updating these DOM elements when needed; React does the hard job of comparing the elements and their children between state changes, and only updating them **when** it's needed, and **where** it's needed.
-
-For example, let's say that there is state variable called `isLoading` being set by an API call. While the content of the API is not available, that variable is defined to `true`. When that API call is resolved and the data is available to be showed on the UI, the state of `isLoading` is defined to false. Our JSX portion of the component will look somewhat like this:
-
-```css
-.some-selector {
-	display: block;
-} 
-```
-
-While `isLoading` is seen as false, we show a previously defined spinner component, to indicate the loading state to the user. When `isLoading` is read as false, we then show the content.
-
-Notice how the logic that defines this UI's behavior is enclosed in curly brackets, indicating that this is a JavaScript expression inside of JSX. Anything that is rendered outside of that expression but inside of the `render()` method will be kept as it is, with no regards to the `isLoading` state.
-
-Now stop for a few minutes to think about how much harder it would be to implement this same behavior with the DOM manipulation tools we are offered with vanilla JavaScript, and how much of that work is abstracted from us by the framework.
+Notice how we store an reference to an element by using the `querySelector` interface, and manipulate it by using the properties and methods available to that specific element.
