@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     title: 'Ernesto Resende',
     author: '@ernestoresende',
-    image: '',
+    image: 'https://res.cloudinary.com/ernestoresende/image/upload/v1630822946/og%20cards/Main_Card_vdygqg.jpg',
     siteUrl: 'https://ernestoresende.com',
     description: 'UI Designer and Front-End Developer. Blogs about design, development and tech stuff.',
     keywords: ['blog', 'frontend', 'development', 'design'],
