@@ -27,17 +27,18 @@ const Navbar = ({ isSticky, isHome }) => {
           </button>
           <nav className='links-container'>
             <S.StyledLink to='/blog'>Blog</S.StyledLink>
-            <S.StyledLink to='/work'>Work</S.StyledLink>
-            <S.StyledLink to='/work#contact'>Contact</S.StyledLink>
+            <S.StyledLink to='#work'>Work</S.StyledLink>
+            <S.StyledLink to='#contact'>Contact</S.StyledLink>
           </nav>
           <ToggleTheme />
         </S.MobileMenu>
 
         <S.Main>
-          <S.NameContainer to='/'>ErRe</S.NameContainer>
-          <S.NavList>
-            <li>
-              {/* <S.StyledDropdown onClick={onDropdownMenuClick}>
+          <div style={{ display: 'flex', alignItems: 'center' }}>
+            <S.NameContainer to='/'>ErRe</S.NameContainer>
+            <S.NavList>
+              <li>
+                {/* <S.StyledDropdown onClick={onDropdownMenuClick}>
                 Blog
                 <BiChevronDown />
               </S.StyledDropdown>
@@ -54,15 +55,16 @@ const Navbar = ({ isSticky, isHome }) => {
                   </li>
                 </ul>
               </S.DropdownMenuNav> */}
-              <S.StyledLink to='/blog'>Blog</S.StyledLink>
-            </li>
-            <li>
-              <S.StyledLink to='/work'>Work</S.StyledLink>
-            </li>
-            <li>
-              <S.StyledLink to='/work#contact'>Contact</S.StyledLink>
-            </li>
-          </S.NavList>
+                <S.StyledLink to='/blog'>Blog</S.StyledLink>
+              </li>
+              <li>
+                <S.StyledLink to='#work'>Work</S.StyledLink>
+              </li>
+              <li>
+                <S.StyledLink to='#contact'>Contact</S.StyledLink>
+              </li>
+            </S.NavList>
+          </div>
           <S.FlexContainer>
             <div className='hide-toggle-theme'>
               <ToggleTheme />

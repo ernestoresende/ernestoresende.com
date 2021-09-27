@@ -76,11 +76,15 @@ const StyledGlobalStyles = createGlobalStyle`
   html {
     --primaryBackground: ${props => props.theme.primaryBackground};
     --secondaryBackground: ${props => props.theme.secondaryBackground};
+    --tertiaryBackground: ${props => props.theme.tertiaryBackground};
     --primaryBackgroundTransparent: ${props => props.theme.primaryBackgroundTransparent};
     --secondaryBackgroundTransparent: ${props => props.theme.secondaryBackgroundTransparent};
     --primaryText: ${props => props.theme.primaryText};
     --secondaryText: ${props => props.theme.secondaryText};
     --primaryHighlight: ${props => props.theme.primaryHighlight};
+
+    --tealGradient: ${props => props.theme.tealGradient};
+    --roseGradient: ${props => props.theme.roseGradient};
 
     --infoCardBackground: ${props => props.theme.infoCardBackground};
     --warningCardBackground: ${props => props.theme.warningCardBackground};
@@ -103,7 +107,9 @@ const StyledGlobalStyles = createGlobalStyle`
     --space-xlg: ${V.Space.xlg};
     --space-xxlg: ${V.Space.xxlg};
 
-    --boxShadow-default: ${props => props.theme.boxShadow};
+    --boxShadow-default: ${props => props.theme.boxShadowDefault};
+    --boxShadow-increased: ${props => props.theme.boxShadowIncreased};
+    --projectBoxShadow: ${props => props.theme.projectBoxShadow};
 
     background: var(--primaryBackground);
     font-size: 10px;

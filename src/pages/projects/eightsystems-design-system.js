@@ -22,13 +22,13 @@ const ProjectHeader = styled.div`
   color: var(--primaryText);
 `
 const ProjectTitle = styled.h1`
-  font-family: var(--fontFace-Lora);
+  font-family: var(--fontFace-Milliard);
   font-size: 48px;
-  font-weight: 600;
+  font-weight: 700;
   ${media.bigDesktop`font-size: 26px;`};
 `
 const ProjectDescription = styled.p`
-  font-family: var(--fontFace-Lora);
+  font-family: var(--fontFace-Milliard);
   font-size: 18px;
   color: var(--secondaryText);
 `
@@ -130,8 +130,9 @@ const ProjectBody = styled.div`
   h1 {
     padding-bottom: var(--space-default);
     padding-top: var(--space-default);
-    font-family: var(--fontFace-Lora);
+    font-family: var(--fontFace-Milliard);
     font-size: 42px;
+    font-weight: 700;
     color: var(--primaryText);
     line-height: 1.2;
     ${media.tablet`
@@ -147,7 +148,7 @@ const ProjectBody = styled.div`
   h3 {
     padding-bottom: var(--space-default);
     padding-top: var(--space-default);
-    font-family: var(--fontFace-Lora);
+    font-family: var(--fontFace-Milliard);
     font-size: 20px;
     color: var(--primaryText);
     font-weight: 700;
@@ -168,12 +169,12 @@ const ProjectBody = styled.div`
 const EightSystemsDesignSystem = () => {
   return (
     <React.Fragment>
-      <Seo title='EightSystems/design-system - Ernesto Resende' />
+      <Seo title={"EightSystem's Design System - Ernesto Resende"} />
       <Layout isNavHome={false} isNavSticky={true}>
         <Main>
           <Spacer size={128} />
           <ProjectHeader>
-            <ProjectTitle>EightSystems/design-system</ProjectTitle>
+            <ProjectTitle>EightSystem's Design System</ProjectTitle>
             <Spacer size={24} />
             <ProjectDescription>
               The official design-system used by internal projects at EightSystems.
@@ -189,13 +190,13 @@ const EightSystemsDesignSystem = () => {
               </div>
               <div className='align-center'>
                 <h1>Code</h1>
-                <a ref='noopener noreferrer' target='_blank' href='https://github.com/EightSystems/design-system'>
+                <a rel='noopener noreferrer' target='_blank' href='https://github.com/EightSystems/design-system'>
                   <FaGithub />
                 </a>
               </div>
               <div className='align-center'>
                 <h1>Demo</h1>
-                <a ref='noopener noreferrer' target='_blank' href='https://eightsystems.github.io/design-system/'>
+                <a rel='noopener noreferrer' target='_blank' href='https://eightsystems.github.io/design-system/'>
                   <FaExternalLinkAlt />
                 </a>
               </div>
@@ -216,6 +217,9 @@ const EightSystemsDesignSystem = () => {
         </ProjectContent>
         <ProjectBody>
           <p>
+            The EightSystem's Design System is my favorite project so far while working at EightSystems. Not only I got to bootstratp this project from the ground, but it also gave me the opportunity to grasp some insight into the inner workings of modules, bundlers and compilers that the usual project-contained component development for React projects didn't give me before.
+          </p>
+          <p>
             The internal lineup of EightSystems internal products is in constant evolution, and new projects tackling
             areas like online payment, delivery, and logistics are always in our roadmap, either in active development
             or recurrent support.
@@ -223,12 +227,6 @@ const EightSystemsDesignSystem = () => {
           <p>
             This called for the need to have a design-system and component guidelines we could reference from and
             consume in our future projects, allowing us to maintain a consistent design language in all of our products.
-          </p>
-          <h1>Rationale</h1>
-          <p>
-            When the first products at EightSystems were released, they lacked a consistent design language, and styling
-            was all over the place. This was fine given the fairly limited user base and the slow-growing nature of the
-            products at the time, but was we began planning for expansions, this could no longer be the case.
           </p>
           <h1>The Design System</h1>
           <p>Some key points were defined before starting the project:</p>

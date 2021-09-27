@@ -1,20 +1,18 @@
 import React from 'react'
 import * as S from './styled'
 import PropTypes from 'prop-types'
+import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 
 import Spacer from '@components/common/Spacer'
 
-import { FaRegFolder } from 'react-icons/fa'
-
-const ProjectItem = ({ projectTitle, projectDescription, projectLink }) => {
+const ProjectItem = ({ projectTitle, projectImage, projectImageAlt, projectDescription, projectLink }) => {
+  const image = getImage(projectImage)
   return (
     <S.Main to={projectLink}>
-      <S.IconWrapper>
-        <FaRegFolder />
-      </S.IconWrapper>
-      <Spacer size={16} />
+      <GatsbyImage image={image} alt={projectImageAlt} />
+      <Spacer size={32} />
       <S.ProjectTitle>{projectTitle}</S.ProjectTitle>
-      <Spacer size={8} />
+      <Spacer size={16} />
       <S.ProjectDescription>{projectDescription}</S.ProjectDescription>
     </S.Main>
   )

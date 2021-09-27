@@ -9,18 +9,6 @@ import Layout from '@components/common/Layout'
 import Spacer from '@components/common/Spacer'
 import ProjectItem from '@components/common/ProjectItem'
 
-import { FaGithub, FaLinkedin } from 'react-icons/fa'
-import { AiFillGitlab } from 'react-icons/ai'
-
-const StyledHero = styled(Hero)`
-  text-align: left !important;
-`
-const HeadingSection = styled.div`
-  ${mixins.sidePadding}
-  ${mixins.desktopAlignCenter}
-  margin-bottom: var(--space-default);
-`
-
 const AboutSection = styled.section`
   font-family: var(--fontFace-Milliard);
   color: var(--primaryText);
@@ -43,47 +31,7 @@ const AboutSection = styled.section`
     }
   }
 
-  .heading-highlight {
-    background-image: linear-gradient(
-      transparent 0,
-      transparent 55%,
-      var(--primaryHighlight) 55%,
-      var(--primaryHighlight) 90%,
-      transparent 90%,
-      transparent 100%
-    );
-    background-repeat: no-repeat;
-    background-size: 95% 100%;
-    animation: underline 0.5s 1s cubic-bezier(0.645, 0.045, 0.355, 1) forwards;
-  }
-`
-const BigHeading = styled.h1`
-  font-family: var(--fontFace-Lora);
-  text-align: left;
-  font-size: 50px;
-  ${media.phablet` font-size: 28px; `};
-`
-const MediumHeading = styled.h2`
-  font-family: var(--fontFace-Lora);
-  text-align: left;
-  font-size: 20px;
-  line-height: 1.4;
-  margin-top: 22px;
-  ${media.phablet` font-size: 18px; `};
-`
-const Socials = styled.div`
-  display: flex;
-  margin-top: var(--space-lg);
-
-  a {
-    margin-right: var(--space-default);
-  }
-
-  svg {
-    fill: var(--primaryText);
-    height: 24px;
-    width: 24px;
-  }
+  
 `
 
 const StyledHighlight = styled.div`
@@ -138,34 +86,7 @@ const Work = () => {
       <Seo title='Work - Ernesto Resende' />
       <Layout isNavHome={false} isNavSticky={true}>
         <AboutSection>
-          <StyledHero>
-            <HeadingSection>
-              <BigHeading>
-                Hey, I'm Ernesto{' '}
-                <span role='img' aria-label='hand wave emoji'>
-                  👋
-                </span>
-              </BigHeading>
-              <MediumHeading>
-                <span className='heading-highlight'>Front-end and mobile developer</span>, fantasy storytelling
-                connoisseur. I occasionally write on this very site.
-              </MediumHeading>
-              <Socials>
-                {/* <a href='#'>
-                  <FaFileAlt />
-                </a> */}
-                <a target='_blank' rel='noopener noreferrer' href='https://github.com/ernestoresende'>
-                  <FaGithub />
-                </a>
-                <a target='_blank' rel='noopener noreferrer' href='https://gitlab.com/thisisernesto'>
-                  <AiFillGitlab />
-                </a>
-                <a target='_blank' rel='noopener noreferrer' href='https://www.linkedin.com/in/ernesto-resende'>
-                  <FaLinkedin />
-                </a>
-              </Socials>
-            </HeadingSection>
-          </StyledHero>
+          
           <section className='section-container'>
             <Highlight />
             <p>I'm a self-taught front-end developer and UI designer since 2019.</p>
