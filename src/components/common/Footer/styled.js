@@ -9,7 +9,7 @@ export const MainContainer = styled.div`
   font-family: var(--fontFace-Milliard);
   color: var(--primaryText);
   margin-top: 36px;
-  height: 300px;
+  height: 240px;
   background: var(--secondaryBackground);
   display: flex;
   flex-direction: column;

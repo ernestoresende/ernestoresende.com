@@ -8,7 +8,8 @@ export const HeaderWrapper = styled.div`
   text-align: center;
   padding: 132px 0 32px 0;
   margin: 0 auto;
-  ${mixins.sidePadding}
+  ${mixins.sidePadding};
+  ${mixins.desktopAlignCenter};
   ${media.tablet`
     text-align: center;
     padding-top: 100px;
@@ -17,18 +18,19 @@ export const HeaderWrapper = styled.div`
   `}
 `
 export const Title = styled.h1`
-  font-family: ${V.FontFaces.Lora};
-  font-size: 72px;
+  font-family: ${V.FontFaces.Milliard};
+  font-size: 54px;
   line-height: 1.3;
   color: var(--primaryText);
   padding-top: 30px;
+  font-weight: 700;
   ${media.tablet`
     font-size: 30px;
     line-height: 1.1;
   `}
 `
 export const Description = styled.h2`
-  font-family: ${V.FontFaces.Lora};
+  font-family: ${V.FontFaces.Milliard};
   font-size: 22px;
   line-height: 32px;
   font-weight: 600;
@@ -103,16 +105,17 @@ export const ArticleWrapper = styled.article`
 
   a {
     ${mixins.styledLink}
-    ${media.thone`
-      font-size: 16px;
-    `}
+    font-size: 16px;
+    display: initial;
+    margin: 0px!important;
   }
   h1 {
     ${mixins.sidePadding};
     padding-bottom: var(--space-default);
     padding-top: var(--space-default);
-    font-family: var(--fontFace-Lora);
+    font-family: var(--fontFace-Milliard);
     font-size: 42px;
+    font-weight: 700;
     color: var(--primaryText);
     line-height: 1.2;
     ${media.tablet`

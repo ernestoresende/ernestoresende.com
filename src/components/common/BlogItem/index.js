@@ -1,7 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import { BiRightArrowAlt } from 'react-icons/bi'
 import * as S from './styled'
 
 const BlogItem = ({ slug, timeToRead, title, description, fixedHoverStyle }) => {
@@ -12,9 +11,6 @@ const BlogItem = ({ slug, timeToRead, title, description, fixedHoverStyle }) => 
         <S.Title>{title}</S.Title>
         <S.Description>{description}</S.Description>
       </div>
-      <S.IconWrapper>
-        <BiRightArrowAlt />
-      </S.IconWrapper>
     </S.PostContainer>
   )
 }

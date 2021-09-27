@@ -15,10 +15,10 @@ const Main = styled.div`
   margin: 0 auto;
   ${mixins.sidePadding}
   .tag-title {
-    font-family: ${V.FontFaces.Lora};
+    font-family: var(--fontFace-Milliard);
     color: var(--primaryText);
     font-size: 32px;
-    font-weight: 600;
+    font-weight: 700;
     margin-bottom: 24px;
   }
 `

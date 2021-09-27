@@ -8,58 +8,44 @@ export const PostContainer = styled(props => <GatsbyLink {...props} />)`
   display: flex;
   text-decoration: none;
   border-radius: 10px;
-  padding: var(--space-md) var(--space-lg);
+  padding: var(--space-md) var(--space-md);
   transition: 300ms ease;
+  border: solid 2px var(--secondaryBackground);
+  background: var(--tertiaryBackground);
+  box-shadow: var(--boxShadow-default);
 
   ${media.desktop`
     padding: var(--space-default);
   `};
 
-  &[data-fixed-hover='true'] {
-    background: var(--secondaryBackground);
-  }
-
   :hover {
-    background: var(--secondaryBackground);
-    &[data-fixed-hover='true'] {
-      box-shadow: var(--boxShadow-default);
-      transform: scale(1.02);
-    }
+    box-shadow: var(--boxShadow-increased);
+    transform: scale(1.03);
   }
   :focus {
-    background: var(--secondaryBackground);
+    box-shadow: var(--boxShadow-increased);
+    transform: scale(1.03);
   }
 `
 export const TimeToRead = styled.p`
   padding-bottom: var(--space-sm);
-  font-size: 16px;
+  font-size: 14px;
   color: var(--secondaryText);
   ${media.thone`
     font-size: 16px;
   `};
 `
 export const Title = styled.h1`
-  font-family: var(--fontFace-Lora);
+  font-family: var(--fontFace-Milliard);
+  font-weight: 600;
   padding-bottom: var(--space-sm);
   font-size: 28px;
   color: var(--primaryText);
   letter-spacing: -0.05rem;
+  line-height: 36px;
 `
 export const Description = styled.h2`
   font-size: 16px;
   color: var(--secondaryText);
-  line-height: 22px;
-`
-export const IconWrapper = styled.div`
-  padding-left: var(--space-lg);
-  display: flex;
-  align-items: center;
-  color: var(--secondaryText);
-  ${media.desktop`
-  padding-left: var(--space-xsm);
-    `};
-  svg {
-    width: 36px;
-    height: 36px;
-  }
+  line-height: 26px;
 `

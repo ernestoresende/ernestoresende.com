@@ -37,8 +37,8 @@ const mixins = {
   styledLink: css`
     font-family: ${V.FontFaces.Milliard};
     font-size: 15px;
-    font-weight: 300;
-    margin: 0 16px;
+    font-weight: 600;
+    margin: 0 12px;
     color: var(--primaryText);
     display: inline-block;
     position: relative;

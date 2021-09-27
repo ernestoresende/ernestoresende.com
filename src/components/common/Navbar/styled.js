@@ -50,6 +50,8 @@ export const MobileMenu = styled.nav`
   }
 `
 export const Main = styled.div`
+  ${mixins.sidePadding};
+  ${mixins.desktopAlignCenter};
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -69,8 +71,6 @@ export const Header = styled.header`
   ${media.tablet`height: 55px;`}
 `
 export const FlexContainer = styled.div`
-  ${mixins.sidePadding}
-
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -86,18 +86,17 @@ export const FlexContainer = styled.div`
 `
 export const NameContainer = styled(props => <GatsbyLink {...props} />)`
   font-family: ${V.FontFaces.Milliard};
-  color: var(--primaryText);
+  background: var(--tealGradient);
+  background-clip: text!important;
+  -webkit-background-clip: text!important;
+  -webkit-text-fill-color: transparent!important;
   text-decoration: none;
-  padding-left: 50px;
-  font-size: 18px;
-  font-weight: 600;
+  padding-right: var(--space-lg);
+  font-size: 20px;
+  font-weight: 700;
   letter-spacing: -0.015em;
   ${media.tablet`
     font-size: 18px;
-    padding-left: 55px;
-  `}
-  ${media.phablet`
-    padding-left: 15px;
   `}
 `
 export const NavList = styled.ul`

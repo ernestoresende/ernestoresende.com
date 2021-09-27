@@ -18,7 +18,7 @@ export default function PageTemplate({ data: { mdx } }) {
 
   return (
     <React.Fragment>
-      <Seo title={`${mdx.frontmatter.title} - Ernesto Resende`} />
+      <Seo title={`${mdx.frontmatter.title} - Ernesto Resende`} description={mdx.frontmatter.description} />
       <Layout isNavSticky={true} isNavHome={false}>
         <S.HeaderWrapper>
           <S.Tag>{mdx.frontmatter.tags}</S.Tag>

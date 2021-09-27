@@ -2,9 +2,9 @@ module.exports = {
   siteMetadata: {
     title: 'Ernesto Resende',
     author: '@ernestoresende',
-    image: 'https://res.cloudinary.com/ernestoresende/image/upload/v1630822946/og%20cards/Main_Card_vdygqg.jpg',
+    image: 'https://res.cloudinary.com/ernestoresende/image/upload/v1632601893/og%20cards/Main_Card_mcyo12.jpg',
     siteUrl: 'https://ernestoresende.com',
-    description: 'UI Designer and Front-End Developer. Blogs about design, development and tech stuff.',
+    description: 'Front-end & mobile developer. Typing weird symbols that make the computer go beep boop.',
     keywords: ['blog', 'frontend', 'development', 'design'],
   },
 
@@ -12,8 +12,8 @@ module.exports = {
     {
       resolve: 'gatsby-source-filesystem',
       options: {
-        name: 'posts',
-        path: `${__dirname}/src/content/posts/`,
+        name: 'content',
+        path: `${__dirname}/src/content/`,
       },
     },
     {
