@@ -1,5 +1,4 @@
 import { useWindowScroll } from '../hooks/useWindowScroll';
-// import useWindowScroll from 'react-use/lib/useWindowScroll';
 import { clsx } from 'clsx'
 
 export function NavHeader() {
