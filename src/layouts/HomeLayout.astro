@@ -1,12 +1,13 @@
 ---
 import { NavHeader } from '../components/NavHeader';
+import BackgroundGradient from '../assets/BackgroundGradient.svg';
 ---
 
 <body class="bg-chinese-black text-flash-white font-body">
   <NavHeader client:load />
   <img
     class="background-gradient z-background absolute top-0"
-    src="/assets/home/BackgroundGradient.svg"
+    src={BackgroundGradient}
   />
   <slot />
   <!-- Scrollbar definitions for the Home layout -->
