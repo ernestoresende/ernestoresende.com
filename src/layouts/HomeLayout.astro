@@ -1,0 +1,27 @@
+---
+import { NavHeader } from '../components/NavHeader';
+---
+
+<body class="bg-chinese-black text-flash-white font-body">
+  <NavHeader client:load />
+  <img
+    class="background-gradient z-background absolute top-0"
+    src="/assets/home/BackgroundGradient.svg"
+  />
+  <slot />
+  <!-- Scrollbar definitions for the Home layout -->
+  <style>
+    body::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    body::-webkit-scrollbar-track {
+      background-color: #13111c;
+    }
+
+    body::-webkit-scrollbar-thumb {
+      background-color: #5f5c6d;
+      border-radius: 10px;
+    }
+  </style>
+</body>

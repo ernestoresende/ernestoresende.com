@@ -3,11 +3,23 @@ export function ReactComponent() {
     <div
       style={{
         display: 'flex',
+        justifyContent: 'center',
         alignItems: 'center',
-        justifyContent: 'center'
+        height: 8000
       }}
     >
-      Component rendered with React
+      <p className="flex justify-center content-center text-flash-white font-display font-extrabold text-4xl">
+        Component rendered with React
+      </p>
+      <p className="flex justify-center content-center text-flash-white font-display font-extrabold text-4xl">
+        Component rendered with React
+      </p>
+      <p className="flex justify-center content-center text-flash-white font-display font-extrabold text-4xl">
+        Component rendered with React
+      </p>
+      <p className="flex justify-center content-center text-flash-white font-display font-extrabold text-4xl">
+        Component rendered with React
+      </p>
     </div>
   )
 }
