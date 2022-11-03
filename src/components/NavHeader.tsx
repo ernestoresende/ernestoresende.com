@@ -1,7 +1,6 @@
 import { useWindowScroll } from '../hooks/useWindowScroll'
 import { clsx } from 'clsx'
-
-import Logo from '../assets/Logo.svg'
+import { MainLogo } from '../assets/Logo';
 
 export function NavHeader() {
   const { y } = useWindowScroll()
@@ -21,7 +20,8 @@ export function NavHeader() {
         <div className="max-w-3xl w-full h-full border-light-slate/10 border-b flex justify-between">
           {/* Left align portion of the NavBar */}
           <div className="flex items-center justify-center gap-16">
-            <img className="h-4" src={Logo} alt="Ernesto Resende" />
+            {/* <img className="h-4" src={Logo} alt="Ernesto Resende" /> */}
+            <MainLogo className='h-4' />
             {/* Navigation links */}
             <ul className="flex gap-8 text-lavander-gray text-sm font-semibold">
               <li>Blog</li>

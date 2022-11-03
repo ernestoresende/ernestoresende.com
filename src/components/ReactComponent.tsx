@@ -11,15 +11,6 @@ export function ReactComponent() {
       <p className="flex justify-center content-center text-flash-white font-display font-extrabold text-4xl">
         Component rendered with React
       </p>
-      <p className="flex justify-center content-center text-flash-white font-display font-extrabold text-4xl">
-        Component rendered with React
-      </p>
-      <p className="flex justify-center content-center text-flash-white font-display font-extrabold text-4xl">
-        Component rendered with React
-      </p>
-      <p className="flex justify-center content-center text-flash-white font-display font-extrabold text-4xl">
-        Component rendered with React
-      </p>
     </div>
   )
 }

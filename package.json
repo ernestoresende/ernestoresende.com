@@ -13,6 +13,7 @@
     "format:eslint": "eslint --fix \"src/**/*.{js,jsx,ts,tsx,astro}\""
   },
   "dependencies": {
+    "@astrojs/image": "^0.11.0",
     "@astrojs/mdx": "^0.11.5",
     "@astrojs/react": "^1.2.1",
     "@astrojs/tailwind": "^2.1.1",

@@ -12,7 +12,7 @@
     "allowSyntheticDefaultImports": true,
     // Enable stricter transpilation for better output.
     "isolatedModules": true,
-    "types": ["astro/client", "@types/react"],
+    "types": ["@astrojs/image/client", "@types/react"],
     "jsx": "react-jsx",
     "jsxImportSource": "react"
   }
