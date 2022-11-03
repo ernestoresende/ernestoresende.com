@@ -19,6 +19,10 @@ module.exports = {
         'flash-white': '#F1F1F2',
         'lavander-gray': '#C4C1D4',
         'light-slate': '#777F9B',
+      },
+      height: {
+        'screen-4/6': '66.6vh',
+        'screen-5/6': '83.3vh',
       }
     }
   },
