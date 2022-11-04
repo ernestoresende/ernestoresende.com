@@ -1,24 +1,48 @@
 ---
-import { BackgroundRipple } from '../assets/BackgroundRipple'; 
+import { t, Translation } from '../i18n'
+import i18next from 'i18next'
+
+import { BackgroundRipple } from '../assets/BackgroundRipple'
+import { Document, Github, LinkedIn } from '../assets/icons'
+
+const language = i18next.language
+const translation: Translation = t[language]
 ---
 
 <section class="px-8 h-screen-5/6 flex justify-center items-center">
   <div class="max-w-2xl w-full">
     <div class="flex">
       <div class="z-10">
+        <!-- Heading -->
         <h1 class="font-display font-extrabold text-7xl pb-6">
-          Hi, I'm{' '}
+          {translation.siteHome.hero.heading}{' '}
           <span
             class="text-transparent bg-clip-text bg-gradient-to-r from-eletric-pink to-deep-lilac"
           >
             Ernesto
           </span>
         </h1>
-        <p class="text-xl text-lavander-gray font-normal leading-9">
-          Software engineer especialized in building (and ocasionally designing)
-          digital products. Highly focused on the JavaScript ecosystem and
-          serverless environments.
+
+        <p class="text-xl text-lavander-gray font-normal leading-9 pb-7">
+          {translation.siteHome.hero.description}
         </p>
+        <div class="flex gap-8">
+          <a href="#">
+            <Document
+              className="text-lavander-gray h-7 w-7 hover:text-flash-white transition duration-300"
+            />
+          </a>
+          <a href="#">
+            <Github
+              className="text-lavander-gray h-7 w-7 hover:text-flash-white transition duration-300"
+            />
+          </a>
+          <a href="#">
+            <LinkedIn
+              className="text-lavander-gray h-7 w-7 hover:text-flash-white transition duration-300"
+            />
+          </a>
+        </div>
       </div>
       <div class="absolute top-0 right-0 w-7/12 max-w-2xl z-0">
         <BackgroundRipple />

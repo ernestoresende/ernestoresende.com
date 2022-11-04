@@ -1,10 +1,15 @@
 ---
+import { t, Translation } from '../i18n'
+import i18next from 'i18next'
 import { NavHeader } from '../components/NavHeader'
 import BackgroundGradient from '../assets/BackgroundGradient.svg'
+
+const language = i18next.language
+const translation: Translation = t[language]
 ---
 
 <body class="bg-chinese-black text-flash-white font-body antialiased">
-  <NavHeader client:load />
+  <NavHeader translation={translation} client:load />
   <img
     class="background-gradient z-background absolute top-0"
     src={BackgroundGradient}

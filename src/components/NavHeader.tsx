@@ -1,8 +1,9 @@
+import { Translation } from '../i18n'
 import { useWindowScroll } from '../hooks/useWindowScroll'
 import { clsx } from 'clsx'
 import { MainLogo } from '../assets/Logo'
 
-export function NavHeader() {
+export function NavHeader({ translation }: { translation: Translation }) {
   const { y } = useWindowScroll()
   const showBackgroundColor = y > 150
 
@@ -27,19 +28,19 @@ export function NavHeader() {
                 className="hover:text-flash-white transition duration-300"
                 href="#"
               >
-                <li>Blog</li>
+                <li>{translation.siteNavigation.labels.blog}</li>
               </a>
               <a
                 className="hover:text-flash-white transition duration-300"
                 href="#"
               >
-                <li>Work</li>
+                <li>{translation.siteNavigation.labels.work}</li>
               </a>
               <a
                 className="hover:text-flash-white transition duration-300"
                 href="#"
               >
-                <li>Contact</li>
+                <li>{translation.siteNavigation.labels.contact}</li>
               </a>
             </ul>
           </div>

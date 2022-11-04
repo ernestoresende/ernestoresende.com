@@ -1,11 +1,14 @@
 ---
+import { changeLanguage } from 'i18next'
 import Seo from '../layouts/Seo.astro'
-import HomeLayout from '../layouts/HomeLayout.astro'
+import HomeLayout from '../layouts/Home.astro'
 import HomeHero from '../components/HomeHero.astro'
 import AboutMe from '../components/AboutMe.astro'
+
+changeLanguage('en')
 ---
 
-<Seo title="Ernesto Resende">
+<Seo>
   <HomeLayout>
     <HomeHero />
     <AboutMe />
