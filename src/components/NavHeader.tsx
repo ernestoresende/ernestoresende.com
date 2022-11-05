@@ -23,15 +23,15 @@ export function NavHeader() {
             <MainLogo className="h-4" />
             {/* Navigation links */}
             <ul className="flex gap-8 text-lavander-gray text-sm font-body font-semibold">
-              <a className="hover:text-flash-white transition duration-300" href="#">
-                <li>blog</li>
-              </a>
-              <a className="hover:text-flash-white transition duration-300" href="#">
-                <li>work</li>
-              </a>
-              <a className="hover:text-flash-white transition duration-300" href="#">
-                <li>contact</li>
-              </a>
+              <li className="hover:text-flash-white transition duration-300">
+                <a href="#">blog</a>
+              </li>
+              <li className="hover:text-flash-white transition duration-300">
+                <a href="#">work</a>
+              </li>
+              <li className="hover:text-flash-white transition duration-300">
+                <a href="#">contact</a>
+              </li>
             </ul>
           </div>
         </div>

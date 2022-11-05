@@ -20,13 +20,13 @@ export function HomeHero() {
             </p>
 
             <div className="flex gap-8">
-              <a href="#">
+              <a aria-label='CV' href="#">
                 <Document className="text-lavander-gray h-7 w-7 hover:text-flash-white transition duration-300" />
               </a>
-              <a href="#">
+              <a aria-label='Github' href="#">
                 <Github className="text-lavander-gray h-7 w-7 hover:text-flash-white transition duration-300" />
               </a>
-              <a href="#">
+              <a aria-label='LinkedIn' href="#">
                 <LinkedIn className="text-lavander-gray h-7 w-7 hover:text-flash-white transition duration-300" />
               </a>
             </div>
