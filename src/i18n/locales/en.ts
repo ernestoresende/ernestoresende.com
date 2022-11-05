@@ -1,8 +1,7 @@
 export const en = {
   siteMetadata: {
     title: 'Ernesto Resende',
-    description:
-      'Software engineer, typing weird symbols that make the computer go beep boop!'
+    description: 'Software engineer, typing weird symbols that make the computer go beep boop!'
   },
   siteNavigation: {
     labels: {
@@ -20,4 +19,4 @@ export const en = {
   }
 }
 
-export type Shape = typeof en;
+export type Shape = typeof en

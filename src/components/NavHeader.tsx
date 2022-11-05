@@ -1,9 +1,8 @@
-import { Translation } from '../i18n'
-import { useWindowScroll } from '../hooks/useWindowScroll'
 import { clsx } from 'clsx'
-import { MainLogo } from '../assets/Logo'
+import { useWindowScroll } from '@/hooks/useWindowScroll'
+import { MainLogo } from '@/assets/Logo'
 
-export function NavHeader({ translation }: { translation: Translation }) {
+export function NavHeader() {
   const { y } = useWindowScroll()
   const showBackgroundColor = y > 150
 
@@ -23,24 +22,15 @@ export function NavHeader({ translation }: { translation: Translation }) {
           <div className="flex items-center justify-center gap-16">
             <MainLogo className="h-4" />
             {/* Navigation links */}
-            <ul className="flex gap-8 text-lavander-gray text-sm font-semibold">
-              <a
-                className="hover:text-flash-white transition duration-300"
-                href="#"
-              >
-                <li>{translation.siteNavigation.labels.blog}</li>
+            <ul className="flex gap-8 text-lavander-gray text-sm font-body font-semibold">
+              <a className="hover:text-flash-white transition duration-300" href="#">
+                <li>blog</li>
               </a>
-              <a
-                className="hover:text-flash-white transition duration-300"
-                href="#"
-              >
-                <li>{translation.siteNavigation.labels.work}</li>
+              <a className="hover:text-flash-white transition duration-300" href="#">
+                <li>work</li>
               </a>
-              <a
-                className="hover:text-flash-white transition duration-300"
-                href="#"
-              >
-                <li>{translation.siteNavigation.labels.contact}</li>
+              <a className="hover:text-flash-white transition duration-300" href="#">
+                <li>contact</li>
               </a>
             </ul>
           </div>
