@@ -1,18 +1,8 @@
 import * as React from 'react'
 
-export const MainLogo = (
-  props: JSX.IntrinsicAttributes & React.SVGProps<SVGSVGElement>
-) => (
-  <svg
-    viewBox="0 0 46 16"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-    {...props}
-  >
-    <path
-      d="M.938 15V.455H11.42v3.181H4.887v2.5h5.995v3.182H4.886v2.5h6.506V15H.938Z"
-      fill="url(#a)"
-    />
+export const MainLogo = (props: JSX.IntrinsicAttributes & React.SVGProps<SVGSVGElement>) => (
+  <svg viewBox="0 0 46 16" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
+    <path d="M.938 15V.455H11.42v3.181H4.887v2.5h5.995v3.182H4.886v2.5h6.506V15H.938Z" fill="url(#a)" />
     <path
       d="M13.236 15V4.09h3.806v2.075h.114c.199-.767.514-1.328.945-1.683a2.344 2.344 0 0 1 1.527-.533c.17 0 .338.014.504.042.17.024.334.06.49.107v3.345a3.51 3.51 0 0 0-.717-.149 6.45 6.45 0 0 0-.732-.05c-.383 0-.729.088-1.037.263-.303.17-.542.412-.717.725-.175.307-.263.67-.263 1.086V15h-3.92Z"
       fill="url(#b)"
@@ -26,47 +16,19 @@ export const MainLogo = (
       fill="url(#d)"
     />
     <defs>
-      <linearGradient
-        id="a"
-        x1={17.327}
-        y1={-4}
-        x2={42.228}
-        y2={-1.92}
-        gradientUnits="userSpaceOnUse"
-      >
+      <linearGradient id="a" x1={17.327} y1={-4} x2={42.228} y2={-1.92} gradientUnits="userSpaceOnUse">
         <stop stopColor="#F42A8B" />
         <stop offset={1} stopColor="#9D4CCE" />
       </linearGradient>
-      <linearGradient
-        id="b"
-        x1={17.327}
-        y1={-4}
-        x2={42.228}
-        y2={-1.92}
-        gradientUnits="userSpaceOnUse"
-      >
+      <linearGradient id="b" x1={17.327} y1={-4} x2={42.228} y2={-1.92} gradientUnits="userSpaceOnUse">
         <stop stopColor="#F42A8B" />
         <stop offset={1} stopColor="#9D4CCE" />
       </linearGradient>
-      <linearGradient
-        id="c"
-        x1={17.327}
-        y1={-4}
-        x2={42.228}
-        y2={-1.92}
-        gradientUnits="userSpaceOnUse"
-      >
+      <linearGradient id="c" x1={17.327} y1={-4} x2={42.228} y2={-1.92} gradientUnits="userSpaceOnUse">
         <stop stopColor="#F42A8B" />
         <stop offset={1} stopColor="#9D4CCE" />
       </linearGradient>
-      <linearGradient
-        id="d"
-        x1={17.327}
-        y1={-4}
-        x2={42.228}
-        y2={-1.92}
-        gradientUnits="userSpaceOnUse"
-      >
+      <linearGradient id="d" x1={17.327} y1={-4} x2={42.228} y2={-1.92} gradientUnits="userSpaceOnUse">
         <stop stopColor="#F42A8B" />
         <stop offset={1} stopColor="#9D4CCE" />
       </linearGradient>

@@ -6,4 +6,4 @@ export const t = {
   pt
 }
 
-export type Translation = typeof en;
+export type Translation = typeof en

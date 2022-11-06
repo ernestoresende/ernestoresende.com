@@ -3,8 +3,7 @@ import { Shape } from './en'
 export const pt: Shape = {
   siteMetadata: {
     title: 'Ernesto Resende',
-    description:
-      'Engenheiro de software, digitando uns símbolos estranhos que fazem o computador fazer beep boop!'
+    description: 'Engenheiro de software, digitando uns símbolos estranhos que fazem o computador fazer beep boop!'
   },
   siteNavigation: {
     labels: {
