@@ -3,11 +3,6 @@ import matter from 'gray-matter'
 import path from 'path'
 import fs from 'fs'
 
-import { TitleAndMetaTags } from '@/components/Seo'
-import { HomeHero } from '@/components/HomeHero'
-import { AboutMe } from '@/components/AboutMe'
-import { HomeLayout } from '@/layouts/Home'
-
 type PageProps = {
   posts: {
     frontMatter: {
@@ -38,21 +33,8 @@ export const getStaticProps: GetStaticProps<PageProps> = () => {
   }
 }
 
-export const IndexPage: NextPage<PageProps> = ({ posts }) => {
-  console.log(posts)
-
-  return (
-    <>
-      <TitleAndMetaTags
-        title="Ernesto Resende"
-        description="Software engineer, typing weird symbols that make the computer go beep boop!"
-      />
-      <HomeLayout>
-        <HomeHero />
-        <AboutMe />
-      </HomeLayout>
-    </>
-  )
+const BlogIndexPage: NextPage<PageProps> = ({ posts }) => {
+  return <div>Nothing for now</div>
 }
 
-export default IndexPage
+export default BlogIndexPage
