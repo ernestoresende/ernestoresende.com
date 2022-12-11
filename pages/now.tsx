@@ -9,8 +9,8 @@ const NowPage: NextPage = () => {
         title="what I'm doing now - Ernesto Resende"
       />
       <HomeLayout>
-        <section className="px-8 h-screen-5/6 flex justify-center items-center">
-          <div className="max-w-2xl w-full">
+        <section className="pt-32 pb-20 h-full flex justify-center items-center">
+          <div className="max-w-3xl w-full">
             <h1 className="font-display font-bold text-4xl pb-2">
               what I&apos;m doing now.
             </h1>
