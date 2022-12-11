@@ -1,4 +1,5 @@
 import * as React from 'react'
+import Link from 'next/link'
 import { clsx } from 'clsx'
 import { useWindowScroll } from '@/hooks/useWindowScroll'
 import { MainLogo } from '@/assets/Logo'
@@ -21,7 +22,9 @@ export const NavHeader: React.FC = () => {
         <div className="max-w-3xl w-full h-full border-light-slate/10 border-b flex justify-between">
           {/* Left align portion of the NavBar */}
           <div className="flex items-center justify-center gap-16">
-            <MainLogo className="h-4" />
+            <Link href="/">
+              <MainLogo className="h-4" />
+            </Link>
             {/* Navigation links */}
             <ul className="flex gap-8 text-lavander-gray text-sm font-body font-semibold">
               <li className="hover:text-flash-white transition duration-300">
