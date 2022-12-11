@@ -1,3 +1,4 @@
+import * as React from 'react'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
 import { useOriginLocation } from '@/hooks/useOriginLocation'
@@ -9,7 +10,12 @@ export type TitleAndMetaTagProps = {
   pathName?: string
 }
 
-export function TitleAndMetaTags({ title = 'Yo! Inglês', description = '', image, pathName }: TitleAndMetaTagProps) {
+export const TitleAndMetaTags: React.FC<TitleAndMetaTagProps> = ({
+  title = 'Ernesto Resende',
+  description = 'Software engineer, typing weird symbols that make the computer go beep boop!',
+  image,
+  pathName
+}) => {
   const router = useRouter()
   const originLocation = useOriginLocation()
   const imageUrl = `${originLocation}/social/${image || 'default.png'}`
