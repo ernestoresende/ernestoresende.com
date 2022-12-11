@@ -30,6 +30,7 @@ export const TitleAndMetaTags: React.FC<TitleAndMetaTagProps> = ({
       <meta property="og:description" content={description} />
       <meta property="og:image" content={imageUrl} />
       <meta name="twitter:card" content="summary_large_image" />
+      <meta name="theme-color" content="#13111C" />
     </Head>
   )
 }
