@@ -1,4 +1,6 @@
-.cache
-package.json
-package-lock.json
-public
+# Add files here to ignore them from prettier formatting
+
+/.husky
+/dist
+/coverage
+/node_modules
