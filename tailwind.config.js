@@ -10,8 +10,6 @@ module.exports = {
         behind: '-1'
       },
       fontFamily: {
-        // display: ['Nunito', 'ui-sans-serif', 'system-ui'],
-        // body: ['Inter', 'ui-sans-serif', 'system-ui']
         display: ['var(--font-nunito)', ...fontFamily.sans],
         body: ['var(--font-inter)', ...fontFamily.sans]
       },
@@ -24,11 +22,47 @@ module.exports = {
         'lavander-gray': '#C4C1D4',
         'light-slate': '#777F9B'
       },
+      maxHeight: {
+        112: '28rem',
+        128: '32rem',
+        148: '38rem',
+        170: '48rem'
+      },
       height: {
         'screen-4/6': '66.6vh',
-        'screen-5/6': '83.3vh'
+        'screen-5/6': '83.3vh',
+        112: '28rem',
+        128: '32rem',
+        148: '38rem',
+        170: '48rem'
+      },
+      gridTemplateColumns: {
+        '3/2': '2fr 1fr'
       }
     }
   },
-  plugins: []
+  plugins: [
+    function ({ addBase, theme }) {
+      function extractColorVars(colorObj, colorGroup = '') {
+        return Object.keys(colorObj).reduce((vars, colorKey) => {
+          const value = colorObj[colorKey]
+          const cssVariable =
+            colorKey === 'DEFAULT'
+              ? `--color${colorGroup}`
+              : `--color${colorGroup}-${colorKey}`
+
+          const newVars =
+            typeof value === 'string'
+              ? { [cssVariable]: value }
+              : extractColorVars(value, `-${colorKey}`)
+
+          return { ...vars, ...newVars }
+        }, {})
+      }
+
+      addBase({
+        ':root': extractColorVars(theme('colors'))
+      })
+    }
+  ]
 }
