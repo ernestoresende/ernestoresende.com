@@ -33,7 +33,7 @@ export const AboutMe: React.FC = () => {
               </Link>
             </p>
           </div>
-          <div>
+          <div className="sm:p-0 px-10">
             <ProfileImage />
           </div>
         </div>
