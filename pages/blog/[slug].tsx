@@ -60,12 +60,6 @@ const BlogPostPage: NextPage<PageProps> = ({
   slug,
   mdxSource
 }) => {
-  console.log({
-    frontMatter,
-    slug,
-    mdxSource
-  })
-
   return (
     <>
       <MDXRemote {...mdxSource} />

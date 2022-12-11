@@ -39,15 +39,13 @@ export const getStaticProps: GetStaticProps<PageProps> = () => {
 }
 
 export const IndexPage: NextPage<PageProps> = ({ posts }) => {
-  console.log(posts)
-
   return (
     <>
       <TitleAndMetaTags
         title="Ernesto Resende"
         description="Software engineer, typing weird symbols that make the computer go beep boop!"
       />
-      <HomeLayout>
+      <HomeLayout withWavyBackground={false}>
         <HomeHero />
         <AboutMe />
       </HomeLayout>
