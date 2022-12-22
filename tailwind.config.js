@@ -18,6 +18,7 @@ module.exports = {
         'deep-lilac': '#9D4CCE',
         'french-blue': '#1F89DB',
         'chinese-black': '#13111C',
+        'haiti': '#2B2933',
         'flash-white': '#F1F1F2',
         'lavander-gray': '#C4C1D4',
         'light-slate': '#777F9B'
@@ -37,8 +38,8 @@ module.exports = {
         170: '48rem'
       },
       gridTemplateColumns: {
-        '3/2': '2fr 1fr'
-      }
+        '3/2': '2fr 1fr',
+      },
     }
   },
   plugins: [
