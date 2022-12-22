@@ -1,0 +1,53 @@
+.projectGrid {
+  --imageAlignRight: 1 / 6 / -1 / 13;
+  --imageAlignLeft: 1 / 1 / -1 / 8;
+  --contentAlignLeft: 1 / 1 / -1 / 7;
+  --contentAlignRight: 1 / 7 / -1 / 13;
+}
+
+.projectContent {
+  z-index: 1;
+  position: relative;
+}
+.projectImage {
+  position: relative;
+}
+.projectContent[dir='left'] {
+  grid-area: var(--contentAlignLeft);
+}
+.projectContent[dir='right'] {
+  grid-area: var(--contentAlignRight);
+}
+.projectImage[dir='left'] {
+  grid-area: var(--imageAlignLeft);
+}
+.projectImage[dir='right'] {
+  grid-area: var(--imageAlignRight);
+}
+
+.wrapper::after {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 15px;
+  left: 15px;
+  border-radius: 6px;
+  border: 2px solid var(--color-eletric-pink);
+  z-index: -1;
+  transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.wrapper:hover::after {
+  transform: translate(-5px, -5px);
+}
+
+.projectImage img {
+  filter: brightness(80%) ;
+  transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.projectImage img:hover {
+  filter: brightness(100%);
+}
