@@ -3,10 +3,12 @@ import matter from 'gray-matter'
 import path from 'path'
 import fs from 'fs'
 
+import { HomeLayout } from '@/layouts/Home'
 import { TitleAndMetaTags } from '@/components/Seo'
 import { HomeHero } from '@/components/HomeHero'
 import { AboutMe } from '@/components/AboutMe'
-import { HomeLayout } from '@/layouts/Home'
+import { Work } from '@/components/Work'
+import { Contact } from '@/components/Contact'
 
 type PageProps = {
   posts: {
@@ -38,7 +40,7 @@ export const getStaticProps: GetStaticProps<PageProps> = () => {
   }
 }
 
-export const IndexPage: NextPage<PageProps> = ({ posts }) => {
+export const IndexPage: NextPage<PageProps> = () => {
   return (
     <>
       <TitleAndMetaTags
@@ -48,6 +50,8 @@ export const IndexPage: NextPage<PageProps> = ({ posts }) => {
       <HomeLayout withWavyBackground={false}>
         <HomeHero />
         <AboutMe />
+        <Work />
+        <Contact />
       </HomeLayout>
     </>
   )
