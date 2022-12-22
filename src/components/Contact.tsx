@@ -8,7 +8,7 @@ export const Contact: React.FC = () => {
           </h2>
           <p className="pb-10 text-center">
             I am currently looking for new projects to join, and my inbox is
-            always open. Drop by if you're interested on hiring me for
+            always open. Drop by if you&apos;re interested on hiring me for
             a project or just want to say hi!
           </p>
           <a
