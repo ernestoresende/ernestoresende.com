@@ -1,6 +1,11 @@
 import * as React from 'react'
 import { BackgroundRipple } from '@/assets/BackgroundRipple'
-import { Document, Github, LinkedIn } from '@/assets/icons'
+// import { Document } from '@/assets/icons'
+import {
+  IoDocument as Document,
+  IoLogoGithub as Github,
+  IoLogoLinkedin as LinkedIn
+} from 'react-icons/io5'
 
 export const HomeHero: React.FC = () => {
   return (

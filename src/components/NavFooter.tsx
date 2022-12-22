@@ -7,7 +7,7 @@ type NavFooterProps = {
 
 export const NavFooter: React.FC<NavFooterProps> = ({ withWavyBackground }) => {
   return (
-    <footer role="contentinfo">
+    <footer className="z-10" role="contentinfo">
       {/* SVG Mask wrapper */}
       {withWavyBackground && (
         <div className="relative top-9 overflow-hidden w-full">

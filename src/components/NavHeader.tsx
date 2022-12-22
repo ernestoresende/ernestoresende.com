@@ -28,13 +28,13 @@ export const NavHeader: React.FC = () => {
             {/* Navigation links */}
             <ul className="flex gap-8 text-lavander-gray text-sm font-body font-semibold">
               <li className="hover:text-flash-white transition duration-300">
-                <a href="#">blog</a>
+                <a href="#about">me</a>
               </li>
               <li className="hover:text-flash-white transition duration-300">
-                <a href="#">work</a>
+                <a href="#work">work</a>
               </li>
               <li className="hover:text-flash-white transition duration-300">
-                <a href="#">contact</a>
+                <a href="#contact">contact</a>
               </li>
             </ul>
           </div>

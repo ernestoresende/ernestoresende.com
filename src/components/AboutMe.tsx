@@ -4,15 +4,15 @@ import { ProfileImage } from './ProfileImage'
 
 export const AboutMe: React.FC = () => {
   return (
-    <section className="flex justify-center items-center">
+    <section id="about" className="scroll-mt-24 pb-40 sm:pb-60 flex justify-center items-center">
       <div className="max-w-3xl w-full font-body font-normal leading-8 text-base text-lavander-gray">
-        <h1 className="font-display font-extrabold text-4xl text-flash-white pb-6">
+        <h2 className="font-display font-extrabold text-4xl text-flash-white pb-6">
           me.
-        </h1>
+        </h2>
         <div className="grid grid-cols-1 sm:grid-cols-3/2 gap-11">
           <div>
             <p className="pb-8">
-              Hello, I&apos;m Ernesto, a software engineer from Brazil who has
+              Hello. I&apos;m Ernesto, a software engineer from Brazil who has
               been working with the web platform since 2019.
             </p>
             <p className="pb-8">
