@@ -19,8 +19,10 @@ specifiers:
   npm-run-all: ^4.1.5
   postcss: ^8.4.18
   prettier: ^2.7.1
+  prettier-plugin-tailwindcss: ^0.2.1
   react: ^18.2.0
   react-dom: ^18.2.0
+  react-icons: ^4.7.1
   sharp: ^0.31.2
   tailwindcss: ^3.2.2
   typescript: ^4.8.4
@@ -48,6 +50,8 @@ devDependencies:
   npm-run-all: 4.1.5
   postcss: 8.4.18
   prettier: 2.7.1
+  prettier-plugin-tailwindcss: 0.2.1_prettier@2.7.1
+  react-icons: 4.7.1_react@18.2.0
   sharp: 0.31.2
   tailwindcss: 3.2.2_postcss@8.4.18
   typescript: 4.8.4
@@ -3176,6 +3180,15 @@ packages:
     engines: {node: '>= 0.8.0'}
     dev: true
 
+  /prettier-plugin-tailwindcss/0.2.1_prettier@2.7.1:
+    resolution: {integrity: sha512-aIO8IguumORyRsmT+E7JfJ3A9FEoyhqZR7Au7TBOege3VZkgMvHJMkufeYp4zjnDK2iq4ktkvGMNOQR9T8lisQ==}
+    engines: {node: '>=12.17.0'}
+    peerDependencies:
+      prettier: '>=2.2.0'
+    dependencies:
+      prettier: 2.7.1
+    dev: true
+
   /prettier/2.7.1:
     resolution: {integrity: sha512-ujppO+MkdPqoVINuDFDRLClm7D78qbDt0/NR+wp5FqEZOoTNAjPHWj17QRhu7geIHJfcNhRk1XVQmF8Bp3ye+g==}
     engines: {node: '>=10.13.0'}
@@ -3239,6 +3252,14 @@ packages:
       loose-envify: 1.4.0
       react: 18.2.0
       scheduler: 0.23.0
+
+  /react-icons/4.7.1_react@18.2.0:
+    resolution: {integrity: sha512-yHd3oKGMgm7zxo3EA7H2n7vxSoiGmHk5t6Ou4bXsfcgWyhfDKMpyKfhHR6Bjnn63c+YXBLBPUql9H4wPJM6sXw==}
+    peerDependencies:
+      react: '*'
+    dependencies:
+      react: 18.2.0
+    dev: true
 
   /react-is/16.13.1:
     resolution: {integrity: sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==}
