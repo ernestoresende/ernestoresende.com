@@ -1,4 +1,5 @@
 import '@/styles/global.css'
+import { Analytics } from '@vercel/analytics/react'
 import type { AppProps } from 'next/app'
 import { Inter, Nunito } from '@next/font/google'
 import clsx from 'clsx'
@@ -10,6 +11,7 @@ function App({ Component, pageProps }: AppProps) {
   return (
     <div className={clsx(inter.variable, nunito.variable)}>
       <Component {...pageProps} />
+      <Analytics />
     </div>
   )
 }
