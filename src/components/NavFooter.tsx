@@ -37,7 +37,7 @@ export const NavFooter: React.FC<NavFooterProps> = ({ withWavyBackground }) => {
         <div className="max-w-2xl w-full flex flex-col items-center justify-center">
           <MainLogo className="h-6 pb-2" />
           <p className="text-lavander-gray text-sm">
-            Built by Ernesto Resende - © 2022
+            Built by Ernesto Resende - © 2023
           </p>
         </div>
       </div>
