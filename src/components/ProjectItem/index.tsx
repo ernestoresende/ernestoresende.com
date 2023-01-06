@@ -32,24 +32,24 @@ export const ProjectItem: React.FC<ProjectItemProps> = ({
     <div
       className={clsx(
         styles.projectGrid,
-        'relative flex sm:grid sm:grid-cols-12 gap-3 items-center'
+        'relative flex items-center gap-3 sm:grid sm:grid-cols-12'
       )}
     >
       <div dir={inverted ? 'right' : 'left'} className={styles.projectContent}>
-        <div className="shadow-lg shadow-slate-800/10 p-7 backdrop-blur-md bg-haiti/80 rounded-md">
-          <h3 className="font-display text-flash-white font-bold text-3xl pb-4">
+        <div className="select-none rounded-md border border-dark-purple bg-chinese-black/80 py-7 px-9 shadow-2xl shadow-pink-800/20 backdrop-blur-md transition-all duration-200 hover:shadow-pink-700/30">
+          <h3 className="pb-4 font-display text-3xl font-bold text-flash-white">
             {title}
           </h3>
-          <p className="font-body text-base leading-7 pb-8">{description}</p>
-          <div className="flex w-full items-center justify-right gap-6 ">
+          <p className="pb-8 font-body text-base leading-7">{description}</p>
+          <div className="justify-right flex w-full items-center gap-6 ">
             {githubLink && (
               <a target="_blank" rel="noopener noreferrer" href={githubLink}>
-                <GithubLogo className="hover:text-flash-white transition duration-100 h-6 w-6" />
+                <GithubLogo className="h-6 w-6 transition duration-100 hover:text-flash-white" />
               </a>
             )}
             {externalLink && (
               <a target="_blank" rel="noopener noreferrer" href={externalLink}>
-                <ExternalLink className="hover:text-flash-white transition duration-100 h-6 w-6" />
+                <ExternalLink className="h-6 w-6 transition duration-100 hover:text-flash-white" />
               </a>
             )}
           </div>
