@@ -8,7 +8,7 @@ const NowPage: NextPage = () => {
   return (
     <>
       <TitleAndMetaTags title="what I'm doing now - Ernesto Resende" />
-      <HomeLayout withWavyBackgroundFooter>
+      <HomeLayout>
         <section className="flex h-full items-center justify-center pt-32 pb-20">
           <div className="w-full max-w-3xl">
             <Link

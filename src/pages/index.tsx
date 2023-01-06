@@ -47,7 +47,7 @@ export const IndexPage: NextPage<PageProps> = () => {
         title="Ernesto Resende"
         description="Software engineer, typing weird symbols that make the computer go beep boop!"
       />
-      <HomeLayout withWavyBackgroundFooter={false}>
+      <HomeLayout>
         <HomeHero />
         <AboutMe />
         <Work />
