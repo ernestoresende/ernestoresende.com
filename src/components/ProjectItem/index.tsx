@@ -15,7 +15,9 @@ type ProjectItemProps = {
   imageLink: string
   inverted?: boolean
   githubLink?: string
+  githubLinkAlt?: string
   externalLink?: string
+  externalLinkAlt?: string
 }
 
 export const ProjectItem: React.FC<ProjectItemProps> = ({
@@ -26,7 +28,9 @@ export const ProjectItem: React.FC<ProjectItemProps> = ({
   imageLink,
   inverted = false,
   githubLink,
-  externalLink
+  githubLinkAlt = 'GitHub link',
+  externalLink,
+  externalLinkAlt = 'Project link'
 }) => {
   return (
     <div
@@ -43,12 +47,22 @@ export const ProjectItem: React.FC<ProjectItemProps> = ({
           <p className="pb-8 font-body text-base leading-7">{description}</p>
           <div className="justify-right flex w-full items-center gap-6 ">
             {githubLink && (
-              <a target="_blank" rel="noopener noreferrer" href={githubLink}>
+              <a
+                aria-label={githubLinkAlt}
+                target="_blank"
+                rel="noopener noreferrer"
+                href={githubLink}
+              >
                 <GithubLogo className="h-6 w-6 transition duration-100 hover:text-flash-white" />
               </a>
             )}
             {externalLink && (
-              <a target="_blank" rel="noopener noreferrer" href={externalLink}>
+              <a
+                aria-label={externalLinkAlt}
+                target="_blank"
+                rel="noopener noreferrer"
+                href={externalLink}
+              >
                 <ExternalLink className="h-6 w-6 transition duration-100 hover:text-flash-white" />
               </a>
             )}
