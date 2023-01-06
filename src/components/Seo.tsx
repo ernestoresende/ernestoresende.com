@@ -18,7 +18,7 @@ export const TitleAndMetaTags: React.FC<TitleAndMetaTagProps> = ({
 }) => {
   const router = useRouter()
   const originLocation = useOriginLocation()
-  const imageUrl = `${originLocation}/social/${image || 'default.png'}`
+  const imageUrl = `${originLocation}/api/og`
   const path = pathName || router.pathname
 
   return (
