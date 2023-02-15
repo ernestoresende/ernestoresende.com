@@ -1,0 +1,42 @@
+---
+import { clsx } from "clsx";
+
+export interface Props {
+  className?: string;
+  title: string;
+  description: string;
+  href: string;
+  projectIcon: string;
+  projectType: "open-source" | "personal" | "work";
+}
+
+const { className, title, description, href, projectIcon, projectType } =
+  Astro.props;
+---
+
+<div
+  class={clsx(className, {
+    "h-fit": true,
+  })}
+>
+  <a
+    href={href}
+    class="block border border-dark-gunmetal bg-transparent px-8 py-8 transition duration-200 hover:bg-slate-400/5"
+  >
+    <span class="block pb-10 font-mono text-sm uppercase text-sunglow"
+      >Project</span
+    >
+    <div class="flex justify-center">
+      <img src={projectIcon} alt="" class="h-32 pb-10" />
+    </div>
+    <h3 class="pb-4 text-center text-xl font-semibold md:text-left">{title}</h3>
+    <p
+      class="pb-8 text-center text-sm leading-relaxed text-slate-300/90 md:text-left"
+    >
+      {description}
+    </p>
+    <span class="block font-mono text-sm uppercase text-slate-300/90"
+      >{projectType}</span
+    >
+  </a>
+</div>

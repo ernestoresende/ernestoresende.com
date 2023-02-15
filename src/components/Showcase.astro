@@ -1,0 +1,73 @@
+---
+import ProjectCard from "../components/ProjectCard.astro";
+import PostCard from "../components/PostCard.astro";
+import DetailCard from "./DetailCard.astro";
+
+import GoogleCloudFunctions from "../assets/icons/Google_Cloud_Functions.svg";
+import CardinalLogo from "../assets/icons/Cardinal_Logo.svg";
+import GetInTouchIcon from "../assets/icons/Get_In_Touch.svg";
+---
+
+<section id="work" class="items flex justify-center pt-10 pb-28">
+  <div class="showcase-grid w-full max-w-5xl px-8">
+    <div class="showcase-subgrid relative">
+      <ProjectCard
+        title="Apollo Server on Google Cloud Functions"
+        description="An integration to use Google Cloud Functions as a hosting service with Apollo Server"
+        href="/"
+        projectIcon={GoogleCloudFunctions}
+        projectType="open-source"
+        className="showcase-grid__left-item"
+      />
+      <!-- <PostCard title="Available soon" description="???" href="#" /> -->
+    </div>
+    <div class="showcase-subgrid relative bottom-0 sm:bottom-10">
+      <PostCard
+        title="Coming soon"
+        description="???"
+        publishedAt="Nov, 2022"
+        href="/"
+        className="showcase-grid__middle-top-item"
+      />
+      <DetailCard
+        className="showcase-grid__middle-bottom-item"
+        title="Get in Touch"
+        description="Say Hello"
+        detailIcon={GetInTouchIcon}
+        href="/"
+      />
+    </div>
+    <div class="showcase-subgrid relative bottom-0 sm:bottom-16">
+      <ProjectCard
+        title="Cardinal"
+        description="A batteries included CLI tool that helps you scaffold a monorepo project with the frontend of your choice and a GraphQL backend, with multiple deployment paths"
+        href="/"
+        projectIcon={CardinalLogo}
+        projectType="open-source"
+        className="showcase-grid__right-item"
+      />
+    </div>
+  </div>
+</section>
+<style>
+  .showcase-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    height: fit-content;
+    gap: 22px;
+  }
+
+  @media (max-width: 768px) {
+    .showcase-grid {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+  .showcase-subgrid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(3, auto);
+    height: fit-content;
+    gap: 22px;
+  }
+</style>

@@ -1,0 +1,57 @@
+---
+import ProfileImage from "./ProfileImage.astro";
+---
+
+<section id="about" class="flex justify-center">
+  <div
+    class="w-full max-w-5xl border border-dark-gunmetal bg-gradient-to-tr from-transparent to-slate-300/10 px-8 py-24"
+  >
+    <div class="flex w-full flex-col justify-end">
+      <h2
+        class="max-w-2xl self-end pb-12 font-display text-4xl font-black sm:text-6xl"
+      >
+        Who am I, and what kind of stuff I do?
+      </h2>
+      <div class="flex max-w-2xl justify-between self-end pb-20">
+        <div>
+          <h3 class="pb-2 font-display text-lg font-black">What I do?</h3>
+          <p class="leading-relaxed text-slate-400">
+            Software engineering and design experiments
+          </p>
+        </div>
+        <div>
+          <h3 class="pb-2 font-display text-lg font-black">Main focus</h3>
+          <p class="leading-relaxed text-slate-400">
+            Design systems and serverless architectures
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="flex flex-col-reverse gap-10 md:flex-row md:gap-28">
+      <div
+        class="relative flex w-full justify-center md:top-[20px] md:left-[30px] md:block"
+      >
+        <ProfileImage />
+      </div>
+      <div class="md:pr-14">
+        <p class="pb-8 leading-loose">
+          Create solutions, craft web experiences with care, explore design, UX
+          and interactivity. My main goal in any project is to build and
+          implement elegant and functional solutions that meet the needs of
+          users while staying true to the crafter’s vision.
+        </p>
+        <p class="pb-8 leading-loose">
+          I started out focusing exclusively on solving frontend problems, but
+          nowadays I do find myself constantly jumping between <b>design</b>, <b
+            >frontend</b
+          >
+          and <b>backend</b> engineering tasks. I specially like working with <b
+            >design systems</b
+          >, and have a keen interest in building <b
+            >backends with serverless architectures</b
+          > in mind.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
