@@ -2,44 +2,28 @@ const { fontFamily } = require('tailwindcss/defaultTheme')
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ['./pages/**/*.{js,ts,jsx,tsx}', './src/**/*.{js,ts,jsx,tsx}'],
+  content: ['./src/**/*.{astro,html,js,jsx,md,mdx,ts,tsx}'],
   theme: {
     extend: {
+      screens: {
+        xsm: '480px'
+      },
       zIndex: {
         background: '-5',
         behind: '-1'
       },
       fontFamily: {
-        display: ['var(--font-nunito)', ...fontFamily.sans],
-        body: ['var(--font-inter)', ...fontFamily.sans]
+        display: ['var(--font-neue-power)', ...fontFamily.sans],
+        body: ['var(--font-neue-haas-grotesk)', ...fontFamily.sans],
+        monospace: [...fontFamily.mono]
       },
       colors: {
-        'eletric-pink': '#F42A8B',
-        'deep-lilac': '#9D4CCE',
-        'french-blue': '#1F89DB',
-        'chinese-black': '#13111C',
-        'haiti': '#2B2933',
-        'flash-white': '#F1F1F2',
-        'lavander-gray': '#C4C1D4',
-        'light-slate': '#777F9B'
-      },
-      maxHeight: {
-        112: '28rem',
-        128: '32rem',
-        148: '38rem',
-        170: '48rem'
-      },
-      height: {
-        'screen-4/6': '66.6vh',
-        'screen-5/6': '83.3vh',
-        112: '28rem',
-        128: '32rem',
-        148: '38rem',
-        170: '48rem'
-      },
-      gridTemplateColumns: {
-        '3/2': '2fr 1fr',
-      },
+        turquoise: '#35FFDB',
+        sunglow: '#FFC635',
+        'radical-red': '#FF3559',
+        'chinese-black': '#00030a',
+        'dark-gunmetal': '#171D26'
+      }
     }
   },
   plugins: [
