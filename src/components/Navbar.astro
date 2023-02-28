@@ -1,0 +1,31 @@
+---
+import Logo from "@/assets/logo.svg";
+---
+
+<nav class="fixed z-50 w-full">
+  <div class="relative flex h-14 items-center justify-center">
+    <div
+      class="flex h-full w-full max-w-5xl justify-between border-b border-dark-gunmetal px-8 backdrop-blur-xl"
+    >
+      <div class="flex items-center justify-center gap-6">
+        <a href="/" aria-label="Return to main page">
+          <img src={Logo} alt="Return to main page" class="h-8 w-8" />
+        </a>
+        <span class="hidden font-display font-normal text-slate-300 sm:block"
+          >Personal Interwebs Space</span
+        >
+      </div>
+      <!-- Right align portion of the navbar -->
+      <div class="flex items-center justify-center gap-16">
+        <ul class="flex gap-8 text-sm font-semibold">
+          <li class="transition duration-300">
+            <a href="#about">Me</a>
+          </li>
+          <li class="transition duration-300">
+            <a href="#work">Work</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>

@@ -1,18 +1,61 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@font-face {
+  font-family: "Neue Power";
+  src: url("/fonts/NeuePowerRegular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Neue Power";
+  src: url("/fonts/NeuePowerUltra.woff2") format("woff2");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Neue Haas Grotesk Display";
+  src: url("/fonts/NeueHaasDisplayRoman.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Neue Haas Grotesk Display";
+  src: url("/fonts/NeueHaasDisplayMedium.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
 
 :root {
+  --font-neue-power: "Neue Power";
+  --font-neue-haas-grotesk: "Neue Haas Grotesk Display";
+}
+
+html {
   scroll-behavior: smooth;
 }
 
-body::-webkit-scrollbar {
-  width: 8px;
+body {
+  font-family: var(--font-neue-haas-grotesk), "sans-serif";
+  color: var(--color-slate-50);
+  letter-spacing: 0.05em;
+
+  background-color: var(--color-chinese-black);
+  min-height: 100vh;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
-body::-webkit-scrollbar-track {
-  background-color: #13111c;
+
+.text-stroke {
+  -webkit-text-stroke: 2px var(--color-turquoise);
 }
-body::-webkit-scrollbar-thumb {
-  background-color: #5f5c6d;
-  border-radius: 10px;
+@media (max-width: 640px) {
+  .text-stroke {
+    -webkit-text-stroke: 1px var(--color-turquoise);
+  }
 }

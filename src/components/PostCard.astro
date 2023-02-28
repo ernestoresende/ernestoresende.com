@@ -1,0 +1,34 @@
+---
+import { clsx } from "clsx";
+
+export interface Props {
+  className?: string;
+  title: string;
+  description: string;
+  href: string;
+  publishedAt?: any;
+}
+
+const { className, title, description, href } = Astro.props;
+---
+
+<div class={clsx(className)}>
+  <a
+    href={href}
+    class="block h-full border border-dark-gunmetal bg-transparent px-8 py-10 transition duration-200 hover:bg-slate-400/5"
+  >
+    <span class="block pb-6 font-mono text-sm uppercase text-radical-red"
+      >Notes</span
+    >
+    <h3
+      class="pb-4 text-center font-display text-xl font-semibold md:text-left"
+    >
+      {title}
+    </h3>
+    <p
+      class="text-center text-sm leading-relaxed text-slate-300/90 md:text-left"
+    >
+      {description}
+    </p>
+  </a>
+</div>

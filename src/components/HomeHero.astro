@@ -1,0 +1,73 @@
+---
+import { Icon } from "astro-icon";
+import { Image } from "@astrojs/image/components";
+import BackgroundGradient from "@/assets/Background_Gradient.png";
+---
+
+<main class="flex justify-center">
+  <Image
+    src={BackgroundGradient}
+    alt=""
+    quality={90}
+    class="absolute -z-10 w-full"
+  />
+  <div class="w-full max-w-4xl px-8 pb-10 pt-20 sm:pt-32 sm:pb-10">
+    <h1 class="pb-16 font-display text-6xl font-black xsm:text-7xl sm:text-9xl">
+      <span class="relative right-2">ernesto</span>
+      <span class="text-stroke block leading-[4rem] text-transparent"
+        >resende.</span
+      >
+    </h1>
+
+    <p class="max-w-2xl text-sm font-semibold text-slate-300">
+      Get in touch via
+      <a
+        href="mailto:dev@ernestoresende.com"
+        class="inline-flex items-center justify-center text-center text-sm font-semibold text-slate-300 underline transition duration-200 hover:text-slate-50"
+      >
+        email{" "}
+        <Icon name="ic:outline-email" class="h-6 w-6 px-1" />
+      </a>, see my code on
+      <a
+        href="https://github.com/ernestoresende"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex items-center justify-center text-center text-sm font-semibold text-slate-300 underline transition duration-200 hover:text-slate-50"
+      >
+        GitHub
+        <Icon name="ion:logo-github-outline" class="h-6 w-6 px-1" />
+      </a>,
+
+      <span class="text-slate-400">
+        or find me on
+
+        <a
+          href="https://linkedin.com/in/ernesto-resende/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center justify-center text-center text-sm font-semibold underline transition duration-200 hover:text-slate-50"
+        >
+          platforms I don't really like using
+          <Icon name="bi:linkedin" class="h-6 w-6 px-1" />
+        </a>
+      </span>
+    </p>
+  </div>
+</main>
+<section class="flex justify-center">
+  <div class="w-full max-w-4xl px-8 pt-8 sm:pb-24 sm:pt-24">
+    <span class="block pb-3 font-mono uppercase text-turquoise">Hi there</span>
+    <h2 class="max-w-2xl pb-6 font-display text-3xl font-black">
+      Welcome to my personal space on the interwebs. I'm Ernesto.
+    </h2>
+    <p class="max-w-xl pb-4 leading-loose text-slate-300">
+      I'm software engineer specialized in building (and occasionally designing)
+      digital products. I highly focus on the TypeScript ecosystem and
+      serverless environments.
+    </p>
+    <p class="max-w-xl pb-2 leading-loose text-slate-300">
+      In this space you can find a selection of my works and collaborations on
+      both open-source and client projects.
+    </p>
+  </div>
+</section>

@@ -1,0 +1,27 @@
+---
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
+import HeadCommon from "@/components/Head/HeadCommon.astro";
+import HeadSEO from "@/components/Head/HeadSEO.astro";
+import "@/styles/global.css";
+
+export interface Props {
+  title?: string;
+  description?: string;
+}
+
+const { ...data } = Astro.props;
+const canonicalUrl = new URL(Astro.url.pathname, Astro.site);
+---
+
+<html dir={data.dir} lang="en-us" class="initial">
+  <head>
+    <HeadCommon />
+    <HeadSEO {...data} canonicalUrl={canonicalUrl} />
+  </head>
+  <body>
+    <Navbar />
+    <slot />
+    <Footer />
+  </body>
+</html>

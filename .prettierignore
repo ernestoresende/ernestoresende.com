@@ -1,6 +1,1 @@
-# Add files here to ignore them from prettier formatting
-
-/.husky
-/dist
-/coverage
-/node_modules
+dist
