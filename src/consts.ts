@@ -7,7 +7,7 @@ export const SITE = {
 
 export const OPEN_GRAPH = {
   image: {
-    src: "https://raw.githubusercontent.com/ernestoresende/ernestoresende.com/v4/astro/public/open-graph-banner.jpg",
+    src: "https://raw.githubusercontent.com/ernestoresende/ernestoresende.com/main/public/open-graph-banner.jpg",
     alt: "Ernesto Resende logo",
   },
 };
