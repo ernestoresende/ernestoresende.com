@@ -1,11 +1,11 @@
 ---
-import ProjectCard from "../components/ProjectCard.astro";
-import PostCard from "../components/PostCard.astro";
-import DetailCard from "./DetailCard.astro";
+import ProjectCard from "@/components/ProjectCard.astro";
+import PostCard from "@/components/PostCard.astro";
+import DetailCard from "@/components/DetailCard.astro";
 
-import GoogleCloudFunctions from "../assets/icons/Google_Cloud_Functions.svg";
-import CardinalLogo from "../assets/icons/Cardinal_Logo.svg";
-import GetInTouchIcon from "../assets/icons/Get_In_Touch.svg";
+import GoogleCloudFunctions from "@/assets/icons/Google_Cloud_Functions.svg";
+import CardinalLogo from "@/assets/icons/Cardinal_Logo.svg";
+import GetInTouchIcon from "@/assets/icons/Get_In_Touch.svg";
 ---
 
 <section id="work" class="items flex justify-center pt-10 pb-28">
@@ -14,12 +14,11 @@ import GetInTouchIcon from "../assets/icons/Get_In_Touch.svg";
       <ProjectCard
         title="Apollo Server on Google Cloud Functions"
         description="An integration to use Google Cloud Functions as a hosting service with Apollo Server"
-        href="/"
+        href="https://github.com/apollo-server-integrations/apollo-server-integration-google-cloud-functions"
         projectIcon={GoogleCloudFunctions}
         projectType="open-source"
         className="showcase-grid__left-item"
       />
-      <!-- <PostCard title="Available soon" description="???" href="#" /> -->
     </div>
     <div class="showcase-subgrid relative bottom-0 sm:bottom-10">
       <PostCard
@@ -41,7 +40,7 @@ import GetInTouchIcon from "../assets/icons/Get_In_Touch.svg";
       <ProjectCard
         title="Cardinal"
         description="A batteries included CLI tool that helps you scaffold a monorepo project with the frontend of your choice and a GraphQL backend, with multiple deployment paths"
-        href="/"
+        href="https://cardinal.ernestoresende.com"
         projectIcon={CardinalLogo}
         projectType="open-source"
         className="showcase-grid__right-item"
