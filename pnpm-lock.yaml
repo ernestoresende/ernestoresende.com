@@ -22,7 +22,7 @@ specifiers:
 
 dependencies:
   '@astrojs/image': 0.14.1_astro@2.0.10+sharp@0.31.3
-  '@astrojs/mdx': 0.16.0_astro@2.0.10
+  '@astrojs/mdx': 0.16.0_astro@2.0.10+rollup@3.12.1
   '@astrojs/react': 2.0.2_ffd5foczrxyy7gyjqbwgwcqlbq
   '@astrojs/sitemap': 1.0.1
   '@astrojs/tailwind': 3.0.1_4f5srnz5te7bft5a35u2wwbs3u
@@ -30,7 +30,7 @@ dependencies:
   astro-icon: 0.8.0
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
-  tailwindcss: 3.2.4
+  tailwindcss: 3.2.4_postcss@8.4.21
 
 devDependencies:
   '@types/react': 18.0.28
@@ -38,7 +38,7 @@ devDependencies:
   clsx: 1.2.1
   prettier: 2.8.4
   prettier-plugin-astro: 0.8.0
-  prettier-plugin-organize-imports: 3.2.2_prettier@2.8.4
+  prettier-plugin-organize-imports: 3.2.2_silln3pw57har7jydmecgzoypa
   prettier-plugin-tailwindcss: 0.2.2_ywtfesiv55kstluy4uhlimu5ia
   sharp: 0.31.3
 
@@ -123,14 +123,14 @@ packages:
       - supports-color
     dev: false
 
-  /@astrojs/mdx/0.16.0_astro@2.0.10:
+  /@astrojs/mdx/0.16.0_astro@2.0.10+rollup@3.12.1:
     resolution: {integrity: sha512-HNk0FhNNthI7+pLmheJyPVU36dXE5l+9UwmmnrMV6COHNZIO2t+pnWnsushEDYZjpkYITDwnXKnQAtD8Mqj4xw==}
     engines: {node: '>=16.12.0'}
     dependencies:
       '@astrojs/markdown-remark': 2.0.1_astro@2.0.10
       '@astrojs/prism': 2.0.0
       '@mdx-js/mdx': 2.3.0
-      '@mdx-js/rollup': 2.3.0
+      '@mdx-js/rollup': 2.3.0_rollup@3.12.1
       acorn: 8.8.2
       es-module-lexer: 0.10.5
       estree-util-visit: 1.2.1
@@ -194,7 +194,7 @@ packages:
       autoprefixer: 10.4.13_postcss@8.4.21
       postcss: 8.4.21
       postcss-load-config: 4.0.1_postcss@8.4.21
-      tailwindcss: 3.2.4
+      tailwindcss: 3.2.4_postcss@8.4.21
     transitivePeerDependencies:
       - ts-node
     dev: false
@@ -731,13 +731,14 @@ packages:
       - supports-color
     dev: false
 
-  /@mdx-js/rollup/2.3.0:
+  /@mdx-js/rollup/2.3.0_rollup@3.12.1:
     resolution: {integrity: sha512-wLvRfJS/M4UmdqTd+WoaySEE7q4BIejYf1xAHXYvtT1du/1Tl/z2450Gg2+Hu7fh05KwRRiehiTP9Yc/Dtn0fA==}
     peerDependencies:
       rollup: '>=2'
     dependencies:
       '@mdx-js/mdx': 2.3.0
-      '@rollup/pluginutils': 5.0.2
+      '@rollup/pluginutils': 5.0.2_rollup@3.12.1
+      rollup: 3.12.1
       source-map: 0.7.4
       vfile: 5.3.6
     transitivePeerDependencies:
@@ -783,7 +784,7 @@ packages:
       escalade: 3.1.1
     dev: false
 
-  /@rollup/pluginutils/5.0.2:
+  /@rollup/pluginutils/5.0.2_rollup@3.12.1:
     resolution: {integrity: sha512-pTd9rIsP92h+B6wWwFbW8RkZv4hiR/xKsqre4SIuAOaOEQRxi0lqLke9k2/7WegC85GgUs9pjmOjCUi3In4vwA==}
     engines: {node: '>=14.0.0'}
     peerDependencies:
@@ -795,6 +796,7 @@ packages:
       '@types/estree': 1.0.0
       estree-walker: 2.0.2
       picomatch: 2.3.1
+      rollup: 3.12.1
     dev: false
 
   /@trysound/sax/0.2.0:
@@ -3210,7 +3212,7 @@ packages:
       synckit: 0.8.5
     dev: true
 
-  /prettier-plugin-organize-imports/3.2.2_prettier@2.8.4:
+  /prettier-plugin-organize-imports/3.2.2_silln3pw57har7jydmecgzoypa:
     resolution: {integrity: sha512-e97lE6odGSiHonHJMTYC0q0iLXQyw0u5z/PJpvP/3vRy6/Zi9kLBwFAbEGjDzIowpjQv8b+J04PDamoUSQbzGA==}
     peerDependencies:
       '@volar/vue-language-plugin-pug': ^1.0.4
@@ -3224,6 +3226,7 @@ packages:
         optional: true
     dependencies:
       prettier: 2.8.4
+      typescript: 4.9.5
     dev: true
 
   /prettier-plugin-tailwindcss/0.2.2_ywtfesiv55kstluy4uhlimu5ia:
@@ -3277,7 +3280,7 @@ packages:
     dependencies:
       prettier: 2.8.4
       prettier-plugin-astro: 0.8.0
-      prettier-plugin-organize-imports: 3.2.2_prettier@2.8.4
+      prettier-plugin-organize-imports: 3.2.2_silln3pw57har7jydmecgzoypa
     dev: true
 
   /prettier/2.8.4:
@@ -3825,10 +3828,12 @@ packages:
       '@pkgr/utils': 2.3.1
       tslib: 2.5.0
 
-  /tailwindcss/3.2.4:
+  /tailwindcss/3.2.4_postcss@8.4.21:
     resolution: {integrity: sha512-AhwtHCKMtR71JgeYDaswmZXhPcW9iuI9Sp2LvZPo9upDZ7231ZJ7eA9RaURbhpXGVlrjX4cFNlB4ieTetEb7hQ==}
     engines: {node: '>=12.13.0'}
     hasBin: true
+    peerDependencies:
+      postcss: ^8.0.9
     dependencies:
       arg: 5.0.2
       chokidar: 3.5.3
@@ -3934,7 +3939,6 @@ packages:
     resolution: {integrity: sha512-1FXk9E2Hm+QzZQ7z+McJiHL4NW1F2EzMu9Nq9i3zAaGqibafqYwCVU6WyWAuyQRRzOlxou8xZSyXLEN8oKj24g==}
     engines: {node: '>=4.2.0'}
     hasBin: true
-    dev: false
 
   /undici/5.16.0:
     resolution: {integrity: sha512-KWBOXNv6VX+oJQhchXieUznEmnJMqgXMbs0xxH2t8q/FUAWSJvOSr/rMaZKnX5RIVq7JDn0JbP4BOnKG2SGXLQ==}
