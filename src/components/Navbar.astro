@@ -1,4 +1,5 @@
 ---
+import { Image } from "@astrojs/image/components";
 import Logo from "@/assets/logo.svg";
 ---
 
@@ -9,7 +10,7 @@ import Logo from "@/assets/logo.svg";
     >
       <div class="flex items-center justify-center gap-6">
         <a href="/" aria-label="Return to main page">
-          <img src={Logo} alt="Return to main page" class="h-8 w-8" />
+          <Image src={Logo} alt="Return to main page" class="h-8 w-8" />
         </a>
         <span class="hidden font-display font-normal text-slate-300 sm:block"
           >Personal Interwebs Space</span

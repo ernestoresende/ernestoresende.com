@@ -1,17 +1,18 @@
 ---
+import { Image } from "@astrojs/image/components";
 import Logo from "@/assets/logo.svg";
 ---
 
 <footer class="w-full pt-20">
   <div class="flex items-center justify-center">
     <div
-      class="flex w-full max-w-5xl justify-between border-t border-dark-gunmetal py-20 px-8"
+      class="flex w-full max-w-5xl justify-between border-t border-dark-gunmetal px-8 py-20"
     >
       <div>
         <p class="font-semibold">Ernesto Resende</p>
         <p class="pb-8 text-sm text-slate-400">2023. All rights reserved</p>
         <a aria-label="Return to main page" href="/">
-          <img class="h-8" src={Logo} alt="Return to main page" />
+          <Image class="h-8" src={Logo} alt="Return to main page" />
         </a>
       </div>
       <div class="flex gap-20">
@@ -29,7 +30,7 @@ import Logo from "@/assets/logo.svg";
           >
         </div>
         <div>
-          <p class="pb-3 font-semibold">Follow me here</p>
+          <p class="pb-3 font-semibold">Find me here</p>
           <a
             href="https://github.com/ernestoresende"
             target="_blank"

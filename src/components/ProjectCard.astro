@@ -1,4 +1,5 @@
 ---
+import { Image } from "@astrojs/image/components";
 import { clsx } from "clsx";
 
 export interface Props {
@@ -6,7 +7,7 @@ export interface Props {
   title: string;
   description: string;
   href: string;
-  projectIcon: string;
+  projectIcon: ImageMetadata;
   projectType: "open-source" | "personal" | "work";
 }
 
@@ -29,7 +30,7 @@ const { className, title, description, href, projectIcon, projectType } =
       >Project</span
     >
     <div class="flex justify-center">
-      <img src={projectIcon} alt="" class="h-32 pb-10" />
+      <Image src={projectIcon} alt="" class="h-32 pb-10" />
     </div>
     <h3 class="pb-4 text-center text-xl font-semibold md:text-left">{title}</h3>
     <p
