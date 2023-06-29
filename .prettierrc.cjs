@@ -7,9 +7,18 @@ module.exports = {
   semi: true,
   trailingComma: "all",
   tabWidth: 2,
+  importOrderParserPlugins: ["typescript", "decorators-legacy"],
   plugins: [
     require.resolve('prettier-plugin-astro'),
     require.resolve('prettier-plugin-tailwindcss')
+  ],
+  overrides: [
+    {
+      files: '*.astro',
+      options: {
+        parser: 'astro'
+      }
+    }
   ],
   tailwindConfig: './tailwind.config.cjs',
 }
