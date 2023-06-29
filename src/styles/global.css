@@ -35,10 +35,6 @@
   --font-neue-haas-grotesk: "Neue Haas Grotesk Display";
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
 body {
   font-family: var(--font-neue-haas-grotesk), "sans-serif";
   color: var(--color-slate-50);
@@ -49,6 +45,51 @@ body {
 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+body {
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body::-webkit-scrollbar {
+  width: 8px;
+}
+body::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+body::-webkit-scrollbar-thumb {
+  background-color: #5f5c6d;
+  border-radius: 10px;
+}
+
+.decorated-button {
+  background-color: rgb(4, 17, 23);
+  transition: transform 0.2s;
+}
+
+.decorated-button::before {
+  content: "";
+  position: absolute;
+  top: 6px;
+  left: 6px;
+  right: -6px;
+  bottom: -6px;
+  background: var(--color-turquoise);
+  z-index: -1;
+  transition: transform 0.15s;
+  transform-origin: left;
+  transform: translate(6px, -3px) scaleX(0);
+}
+
+.decorated-button:hover::before {
+  transform: translate(0px, 0px) scaleX(1);
 }
 
 .text-stroke {
